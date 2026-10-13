@@ -1,0 +1,3906 @@
+[
+ {
+  "PromotionUpdateTime": "2026-10-06T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001383377",
+  "PromotionDescription": "חומוס גדול1 ק ג רמי לוי ב9.90",
+  "PromotionStartDateTime": "2025-11-20T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290015994095",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "33.56",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "9.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-11T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001417880",
+  "PromotionDescription": "טיטולים פרמיום 2ב55 מו4",
+  "PromotionStartDateTime": "2026-07-08T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "2",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000201818",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.625",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000201832",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.655",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000201849",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.764",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000201856",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.809",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000201863",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.917",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000201870",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "8.03",
+          "DiscountedPrice": "55.00",
+          "DiscountedPricePerMida": "0.982",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-11T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001422390",
+  "PromotionDescription": "פתית תלמה ב14.90 נקודתי",
+  "PromotionStartDateTime": "2026-08-13T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290003805501",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "6.29",
+          "DiscountedPrice": "14.90",
+          "DiscountedPricePerMida": "0.050",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290003805587",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "6.29",
+          "DiscountedPrice": "14.90",
+          "DiscountedPricePerMida": "0.060",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290100240632",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "6.29",
+          "DiscountedPrice": "14.90",
+          "DiscountedPricePerMida": "0.060",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-06T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001371435",
+  "PromotionDescription": "יחידת מדפים מעץ במבוק 4 קומות ב49.90 ש ח",
+  "PromotionStartDateTime": "2025-07-23T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T08:17:00.000",
+  "PromotionStartHour": "00:00:00.000",
+  "PromotionEndHour": "08:17:00.000",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290121047418",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "16.69",
+          "DiscountedPrice": "49.90",
+          "DiscountedPricePerMida": "49.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001377894",
+  "PromotionDescription": "פומלית ב5.9 מוגבל ל3",
+  "PromotionStartDateTime": "2026-10-12T07:53:00.000",
+  "PromotionEndDateTime": "2026-10-17T23:59:00.000",
+  "PromotionStartHour": "07:53:00.000",
+  "PromotionEndHour": "23:59:00.000",
+  "PromotionDays": "",
+  "RedemptionLimit": "3",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000000199",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "14.49",
+          "DiscountedPrice": "5.90",
+          "DiscountedPricePerMida": "5.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001422642",
+  "PromotionDescription": "מיץ ענבים 100% רמי לוי ב11.90 כולל",
+  "PromotionStartDateTime": "2026-08-17T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290018940921",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "14.39",
+          "DiscountedPrice": "11.90",
+          "DiscountedPricePerMida": "11.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-06T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001396926",
+  "PromotionDescription": "תרסיס שמן קנולה 200 מ ל עץ הזית ב12.90",
+  "PromotionStartDateTime": "2026-02-02T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002692768",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "18.87",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.065",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290002692775",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "18.87",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.065",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017142289",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "18.87",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.065",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426011",
+  "PromotionDescription": "עדשים סוגת 500ג 3ב12",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "3",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290003643752",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "55.06",
+          "DiscountedPrice": "12.00",
+          "DiscountedPricePerMida": "0.008",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290003643769",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "55.06",
+          "DiscountedPrice": "12.00",
+          "DiscountedPricePerMida": "0.008",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290100703007",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "55.06",
+          "DiscountedPrice": "12.00",
+          "DiscountedPricePerMida": "0.008",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001414736",
+  "PromotionDescription": "פיניש קואנטום אולטימייט 55 יח ב54.90",
+  "PromotionStartDateTime": "2026-07-05T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290112006011",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.41",
+          "DiscountedPrice": "54.90",
+          "DiscountedPricePerMida": "54.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290112006028",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.41",
+          "DiscountedPrice": "54.90",
+          "DiscountedPricePerMida": "0.090",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001421640",
+  "PromotionDescription": "ריצפז פרש הום 2 ליטר 2ב34 נקודתי",
+  "PromotionStartDateTime": "2026-08-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290013268242",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290013269621",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290014397767",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290014397774",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290014397781",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290107280822",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108351613",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108352399",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108352450",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108356892",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108357370",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108358667",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290108359787",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "13.71",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "8.500",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001377875",
+  "PromotionDescription": "עגבניה ב3.9 מוגבל ל3",
+  "PromotionStartDateTime": "2026-10-12T08:26:00.000",
+  "PromotionEndDateTime": "2026-10-17T23:59:00.000",
+  "PromotionStartHour": "08:26:00.000",
+  "PromotionEndHour": "23:59:00.000",
+  "PromotionDays": "",
+  "RedemptionLimit": "3",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000000100",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "33.90",
+          "DiscountedPrice": "3.90",
+          "DiscountedPricePerMida": "3.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427642",
+  "PromotionDescription": "נקנקיות עוף 800 גרם מחפוד ב15.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290004075934",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.87",
+          "DiscountedPrice": "15.90",
+          "DiscountedPricePerMida": "15.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001417016",
+  "PromotionDescription": "פחית בירה מכבי/גולדסטא 500 מ ל 3ב20 כולל",
+  "PromotionStartDateTime": "2026-07-05T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "3",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290008464222",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "18.70",
+          "DiscountedPrice": "20.00",
+          "DiscountedPricePerMida": "0.013",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008464468",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "18.70",
+          "DiscountedPrice": "20.00",
+          "DiscountedPricePerMida": "0.013",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008464475",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "14.53",
+          "DiscountedPrice": "20.00",
+          "DiscountedPricePerMida": "0.013",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001419461",
+  "PromotionDescription": "סוכריות גלי 700 גרם לוקיטוס ב10.90",
+  "PromotionStartDateTime": "2026-08-02T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290018893920",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "39.11",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.016",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019870852",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "39.11",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.016",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-06T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001378090",
+  "PromotionDescription": "נרות לבן/ורוד בניחוח וניל 50 יח ב9.90",
+  "PromotionStartDateTime": "2025-10-23T00:00:00.000",
+  "PromotionEndDateTime": "2027-03-01T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290113476363",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "41.42",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "9.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290113476370",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "41.42",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "9.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118077572",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "41.42",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "9.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118077589",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "41.42",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "9.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001421287",
+  "PromotionDescription": "מקלוני אוזנים/צמר גפן/צמרונים בלונ2ב10.9",
+  "PromotionStartDateTime": "2026-08-02T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002730521",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "21.01",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.027",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290002730941",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "21.01",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.054",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290103128739",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "21.01",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.109",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427644",
+  "PromotionDescription": "נקנקיות עוף 400 גרם מחפוד ב7.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002827771",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "24.76",
+          "DiscountedPrice": "7.90",
+          "DiscountedPricePerMida": "0.020",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427648",
+  "PromotionDescription": "סינטה דק פרמיום 300 גרם מחפוד ב24.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290004075248",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "10.75",
+          "DiscountedPrice": "24.90",
+          "DiscountedPricePerMida": "0.083",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001421881",
+  "PromotionDescription": "תבניות אלומניום ניקול 2ב16",
+  "PromotionStartDateTime": "2026-08-05T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000189079",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "1.600",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189116",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "2.000",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189260",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "1.600",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189277",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "2.667",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189482",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "2.000",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189499",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "2.667",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000189505",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.19",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "1.600",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290000197951",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "10.11",
+          "DiscountedPrice": "16.00",
+          "DiscountedPricePerMida": "2.667",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001422938",
+  "PromotionDescription": "קרם גוף לתינוק 500 מ ל בייבי כיף ב17.90",
+  "PromotionStartDateTime": "2026-08-18T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290108359824",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "10.05",
+          "DiscountedPrice": "17.90",
+          "DiscountedPricePerMida": "0.024",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427649",
+  "PromotionDescription": "בשר לחמין/גולש עגל 800 גרם מחפוד ב48.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002105527",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "5.78",
+          "DiscountedPrice": "48.90",
+          "DiscountedPricePerMida": "0.061",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290002402756",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "5.78",
+          "DiscountedPrice": "48.90",
+          "DiscountedPricePerMida": "0.061",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001422770",
+  "PromotionDescription": "קשתית בקר טרי ב69.90 מו9 רשתי",
+  "PromotionStartDateTime": "2026-08-17T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-17T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "9",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290008202084",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "0.010",
+          "MaxQty": "9",
+          "DiscountRate": "22.25",
+          "DiscountedPrice": "69.90",
+          "DiscountedPricePerMida": "69.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423257",
+  "PromotionDescription": "וופל קואדרטיני דק 200גר 2ב15 מו4",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-30T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "2",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "8000380004669",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "52.53",
+          "DiscountedPrice": "15.00",
+          "DiscountedPricePerMida": "0.037",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "8000380004676",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "52.53",
+          "DiscountedPrice": "15.00",
+          "DiscountedPricePerMida": "0.037",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427650",
+  "PromotionDescription": "כבד עוף צלוי 250 גרם מחפוד ב25.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290004194703",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "13.38",
+          "DiscountedPrice": "25.90",
+          "DiscountedPricePerMida": "0.104",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427656",
+  "PromotionDescription": "קריט קרקרים מלוחים 300 גרם 2ב15",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2027-01-02T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "8434165446588",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "24.24",
+          "DiscountedPrice": "15.00",
+          "DiscountedPricePerMida": "0.025",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-11T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001428130",
+  "PromotionDescription": "דגני בוקר אורגניים 375 גרם נטרפוד 2ב35",
+  "PromotionStartDateTime": "2026-10-11T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290017894904",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "23.58",
+          "DiscountedPrice": "35.00",
+          "DiscountedPricePerMida": "0.047",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017894911",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "23.58",
+          "DiscountedPrice": "35.00",
+          "DiscountedPricePerMida": "0.047",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017894928",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "23.58",
+          "DiscountedPrice": "35.00",
+          "DiscountedPricePerMida": "0.047",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423874",
+  "PromotionDescription": "טחינה אל ארז 1 ק ג ב24.90",
+  "PromotionStartDateTime": "2026-08-27T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290001216057",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "16.72",
+          "DiscountedPrice": "24.90",
+          "DiscountedPricePerMida": "24.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427659",
+  "PromotionDescription": "טאבון גז מקצועי ב-299.90 ש ח אשראי",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2027-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "((2=מועדון לקוחות אשראי))&(3=תווי זיכוי מימוש|3=עיגול אגורות|3=מולטיפס תו רמי לוי)",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290114785761",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "14.29",
+          "DiscountedPrice": "299.90",
+          "DiscountedPricePerMida": "299.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001368184",
+  "PromotionDescription": "פרגיות עוף טרי מחפוד ב78.90 מו3",
+  "PromotionStartDateTime": "2025-06-19T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "3",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002681571",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "7.07",
+          "DiscountedPrice": "78.90",
+          "DiscountedPricePerMida": "78.900",
+          "bIsWeighted": "1"
+         },
+         {
+          "ItemCode": "7290004194581",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "7.07",
+          "DiscountedPrice": "78.90",
+          "DiscountedPricePerMida": "78.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001399978",
+  "PromotionDescription": "סט צלחות אופאל איכותיות ב59.90",
+  "PromotionStartDateTime": "2026-02-23T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "5566774571238",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "25.03",
+          "DiscountedPrice": "59.90",
+          "DiscountedPricePerMida": "59.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118074434",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "25.03",
+          "DiscountedPrice": "59.90",
+          "DiscountedPricePerMida": "59.900",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118074557",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "25.03",
+          "DiscountedPrice": "59.90",
+          "DiscountedPricePerMida": "59.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-11T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001402589",
+  "PromotionDescription": "סיר/סוטאז נירוסטה 24-28 ס מ ב99 ש ח",
+  "PromotionStartDateTime": "2026-03-10T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290118662211",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "33.96",
+          "DiscountedPrice": "99.00",
+          "DiscountedPricePerMida": "99.000",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118667056",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "23.79",
+          "DiscountedPrice": "99.00",
+          "DiscountedPricePerMida": "99.000",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290118667070",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "23.79",
+          "DiscountedPrice": "99.00",
+          "DiscountedPricePerMida": "99.000",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001410293",
+  "PromotionDescription": "גרעיני תירס 335 גרם רמי לוי 2ב10",
+  "PromotionStartDateTime": "2026-05-13T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290119672899",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "36.71",
+          "DiscountedPrice": "10.00",
+          "DiscountedPricePerMida": "0.009",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424090",
+  "PromotionDescription": "מטבעות שוקולד 250גר ב19.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290019079699",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.08",
+          "DiscountedPrice": "19.90",
+          "DiscountedPricePerMida": "0.080",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019079729",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.08",
+          "DiscountedPrice": "19.90",
+          "DiscountedPricePerMida": "0.080",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019079736",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.08",
+          "DiscountedPrice": "19.90",
+          "DiscountedPricePerMida": "0.080",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019079743",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.08",
+          "DiscountedPrice": "19.90",
+          "DiscountedPricePerMida": "0.080",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423284",
+  "PromotionDescription": "יין פרייבט קולקשיין 750מל 2ב80 כולל",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-11-07T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290004658946",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290004658953",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290004658960",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008801010",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008802291",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008802895",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008804332",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290008804462",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.080",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290016717631",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017812830",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017812885",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290018294192",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.057",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019302612",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019398745",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290020329714",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "20.32",
+          "DiscountedPrice": "80.00",
+          "DiscountedPricePerMida": "0.053",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423783",
+  "PromotionDescription": "ערמונים 100גרם רמי לוי 3ב10",
+  "PromotionStartDateTime": "2026-09-01T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "3",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290018566701",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "33.33",
+          "DiscountedPrice": "10.00",
+          "DiscountedPricePerMida": "0.033",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426082",
+  "PromotionDescription": "עוגיות עלי וופל 100 גרם צוקטה 2ב12",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290018893494",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "39.39",
+          "DiscountedPrice": "12.00",
+          "DiscountedPricePerMida": "0.060",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427655",
+  "PromotionDescription": "ויסקי מקאלן דאבל קאסק 700מל 2ב500 כולל",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-11-28T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "5010314302863",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "7.37",
+          "DiscountedPrice": "500.00",
+          "DiscountedPricePerMida": "0.357",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424103",
+  "PromotionDescription": "משטחי החתלה 10יח ב12.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290111096198",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "27.93",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "1.290",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424106",
+  "PromotionDescription": "קוויק מגבוני ניקוי כללי 50יח 2ב12.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290100412343",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290100412435",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290100412442",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290100412459",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111096778",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111096921",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "6.450",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111097546",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "6.450",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111097836",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "6.450",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111098086",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "6.450",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290111099878",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290121603508",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290121603553",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "19.37",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "0.129",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427657",
+  "PromotionDescription": "קופון ריו מרה טונה רמילוי 15%",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-11-30T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "",
+  "AdditionalIsCoupon": "1",
+  "AdditionalRestrictions": "",
+  "Remarks": "קופון ריו מרה טונה רמילוי 15%",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "",
+      "DiscountType": "0",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "8004030341562",
+          "ItemType": "1",
+          "RewardType": "2",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.00",
+          "DiscountedPrice": "22.86",
+          "DiscountedPricePerMida": "0.136",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424254",
+  "PromotionDescription": "צאי מסאלה סדרת קשמיר 2ב34",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290006251107",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "10.05",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "0.340",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290018440247",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "10.05",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "0.340",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290018440254",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "10.05",
+          "DiscountedPrice": "34.00",
+          "DiscountedPricePerMida": "0.340",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423635",
+  "PromotionDescription": "אבוקדו בשל 2ב12-רשתי לכולם",
+  "PromotionStartDateTime": "2026-08-25T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-16T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290018732021",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "49.58",
+          "DiscountedPrice": "12.00",
+          "DiscountedPricePerMida": "0.015",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427662",
+  "PromotionDescription": "ליקר שרי הירינג 700 מ ל ב94.90 כולל",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7350041950103",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "13.65",
+          "DiscountedPrice": "94.90",
+          "DiscountedPricePerMida": "0.136",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424314",
+  "PromotionDescription": "קולון גל קפסולות 60יח ב42.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290112003188",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "14.03",
+          "DiscountedPrice": "42.90",
+          "DiscountedPricePerMida": "0.040",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424837",
+  "PromotionDescription": "משחת שיניים סנסודיין ילדים ב9.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "5054563219305",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "33.56",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "0.198",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5054563219534",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "33.56",
+          "DiscountedPrice": "9.90",
+          "DiscountedPricePerMida": "0.198",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001380217",
+  "PromotionDescription": "סבון ידיים 500 מ ל סטיץ ב3.90 ש ח",
+  "PromotionStartDateTime": "2025-11-03T00:00:00.000",
+  "PromotionEndDateTime": "2026-12-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7298171248045",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "60.61",
+          "DiscountedPrice": "3.90",
+          "DiscountedPricePerMida": "0.008",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427716",
+  "PromotionDescription": "נייר סופג תלת שכבתי נשלף ב12.90",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-11-28T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290121750561",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "13.42",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "12.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001424841",
+  "PromotionDescription": "משחת שיניים פרדונטקס 75 מ ל ב23.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290016866643",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290016866650",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290016866667",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290016866674",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290017031859",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290113560109",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "20.07",
+          "DiscountedPrice": "23.90",
+          "DiscountedPricePerMida": "0.319",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001423386",
+  "PromotionDescription": "שוקולד טעמן 90 גרם 2ב18",
+  "PromotionStartDateTime": "2026-08-23T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "2",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290020449009",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "30.23",
+          "DiscountedPrice": "18.00",
+          "DiscountedPricePerMida": "0.100",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290020449016",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "30.23",
+          "DiscountedPrice": "18.00",
+          "DiscountedPricePerMida": "0.100",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290020449023",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "30.23",
+          "DiscountedPrice": "18.00",
+          "DiscountedPricePerMida": "0.100",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290020449030",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "30.23",
+          "DiscountedPrice": "18.00",
+          "DiscountedPricePerMida": "0.100",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290020449047",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "2",
+          "MaxQty": "",
+          "DiscountRate": "30.23",
+          "DiscountedPrice": "18.00",
+          "DiscountedPricePerMida": "0.100",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001425947",
+  "PromotionDescription": "טים טם 14.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "9310072028743",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "34.93",
+          "DiscountedPrice": "14.90",
+          "DiscountedPricePerMida": "0.074",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "9310072028750",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "34.93",
+          "DiscountedPrice": "14.90",
+          "DiscountedPricePerMida": "0.074",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001425996",
+  "PromotionDescription": "אורז בסמטי 1 ק  ג 11.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290003643004",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "17.93",
+          "DiscountedPrice": "11.90",
+          "DiscountedPricePerMida": "11.900",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426062",
+  "PromotionDescription": "חטיפי שוקולד סניקרס/מרס/באונטי 4ב14",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "4",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "5000159557221",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.076",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159558792",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.069",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159559485",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.070",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159560511",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.070",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159561976",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.070",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159606240",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.076",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5000159609326",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.076",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "5900951310379",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "4",
+          "MaxQty": "",
+          "DiscountRate": "38.60",
+          "DiscountedPrice": "14.00",
+          "DiscountedPricePerMida": "0.096",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426076",
+  "PromotionDescription": "מרכך כביסה סופר מרוכז 900מל טנקס 17.50",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290019014614",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "12.06",
+          "DiscountedPrice": "17.50",
+          "DiscountedPricePerMida": "17.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019014621",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "12.06",
+          "DiscountedPrice": "17.50",
+          "DiscountedPricePerMida": "17.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019611417",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "12.06",
+          "DiscountedPrice": "17.50",
+          "DiscountedPricePerMida": "17.500",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426078",
+  "PromotionDescription": "נוזל רצפות 1.35ליטר טנקס ב22.50",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290019014706",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "9.64",
+          "DiscountedPrice": "22.50",
+          "DiscountedPricePerMida": "22.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019014881",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "9.64",
+          "DiscountedPrice": "22.50",
+          "DiscountedPricePerMida": "22.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019274056",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "9.64",
+          "DiscountedPrice": "22.50",
+          "DiscountedPricePerMida": "22.500",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290019611547",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "9.64",
+          "DiscountedPrice": "22.50",
+          "DiscountedPricePerMida": "22.500",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426379",
+  "PromotionDescription": "נטורל קר שלישיית מגבוני להסרת איפור 16.9",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290013652157",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.08",
+          "DiscountedPrice": "16.90",
+          "DiscountedPricePerMida": "0.188",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290013652164",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.08",
+          "DiscountedPrice": "16.90",
+          "DiscountedPricePerMida": "0.188",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290013652171",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.08",
+          "DiscountedPrice": "16.90",
+          "DiscountedPricePerMida": "0.188",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426389",
+  "PromotionDescription": "נקניקיות עוף/חריפות 400ג יחיעם ב10.90",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-11-28T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000319131",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "15.50",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.027",
+          "bIsWeighted": "0"
+         },
+         {
+          "ItemCode": "7290001567708",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "26.85",
+          "DiscountedPrice": "10.90",
+          "DiscountedPricePerMida": "0.027",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-12T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001377900",
+  "PromotionDescription": "תפוח עץ פינק ב12.9 מוגבל ל3",
+  "PromotionStartDateTime": "2026-10-12T21:51:00.000",
+  "PromotionEndDateTime": "2026-10-17T23:59:00.000",
+  "PromotionStartHour": "21:51:00.000",
+  "PromotionEndHour": "23:59:00.000",
+  "PromotionDays": "",
+  "RedemptionLimit": "3",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290000000797",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "13.42",
+          "DiscountedPrice": "12.90",
+          "DiscountedPricePerMida": "12.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001427718",
+  "PromotionDescription": "נגיסי עוף 700 גרם שף העוף ב8.90 מעל 75 מ",
+  "PromotionStartDateTime": "2026-10-07T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "2",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "75.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290004061494",
+          "ItemType": "1",
+          "RewardType": "3",
+          "MinQty": "1",
+          "MaxQty": "",
+          "DiscountRate": "31.01",
+          "DiscountedPrice": "8.90",
+          "DiscountedPricePerMida": "0.013",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-07T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001402721",
+  "PromotionDescription": "לשון קפוא עטרה ב39.90 מעל 75 מו3",
+  "PromotionStartDateTime": "2026-03-10T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "3",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "1",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "75.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "7290002939542",
+          "ItemType": "1",
+          "RewardType": "10",
+          "MinQty": "0.010",
+          "MaxQty": "3",
+          "DiscountRate": "42.92",
+          "DiscountedPrice": "39.90",
+          "DiscountedPricePerMida": "39.900",
+          "bIsWeighted": "1"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "PromotionUpdateTime": "2026-10-05T00:00:00.000",
+  "AllowMultipleDiscounts": "0",
+  "PromotionID": "0001426430",
+  "PromotionDescription": "סרדינים מרוקאים בשמן סויה 3ב10",
+  "PromotionStartDateTime": "2026-10-04T00:00:00.000",
+  "PromotionEndDateTime": "2026-10-31T23:59:00.000",
+  "PromotionStartHour": "",
+  "PromotionEndHour": "",
+  "PromotionDays": "",
+  "RedemptionLimit": "",
+  "MinNoOfItemOffered": "10",
+  "ClubID": "0",
+  "IsGiftItem": "3",
+  "AdditionalIsCoupon": "0",
+  "AdditionalRestrictions": "",
+  "Remarks": "",
+  "Groups": [
+   {
+    "Group": [
+     {
+      "GroupID": "1",
+      "MinPurchaseAmount": "0.00",
+      "DiscountType": "",
+      "PromotionItems": [
+       {
+        "PromotionItem": [
+         {
+          "ItemCode": "6118000061090",
+          "ItemType": "1",
+          "RewardType": "1",
+          "MinQty": "3",
+          "MaxQty": "",
+          "DiscountRate": "31.97",
+          "DiscountedPrice": "10.00",
+          "DiscountedPricePerMida": "0.027",
+          "bIsWeighted": "0"
+         }
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ]
+ }
+]
