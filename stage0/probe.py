@@ -149,7 +149,7 @@ def main():
         return
 
     def latest(prefix):
-        pat = re.compile(rf"^{prefix}\d+-0*{store_id}-", re.I)
+        pat = re.compile(rf"^{prefix}\d+-\d+-0*{store_id}-", re.I)
         cands = sorted(n for n, _ in files if pat.match(n))
         return cands[-1] if cands else None
 
