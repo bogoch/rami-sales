@@ -1,0 +1,4 @@
+{
+  "_doc": "Stores to build every day. Add store ids (see stores.json) or use [\"all\"].",
+  "stores": ["23"]
+}

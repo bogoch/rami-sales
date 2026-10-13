@@ -148,7 +148,7 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="site")
     ap.add_argument("--history", default="history")
-    ap.add_argument("--stores", help="comma separated store ids (default: all)")
+    ap.add_argument("--stores", help="comma separated store ids or 'all' (default: data/config.json)")
     ap.add_argument("--threads", type=int, default=4)
     args = ap.parse_args()
     out, hist_dir = Path(args.out), Path(args.history)
@@ -165,7 +165,11 @@ def main() -> int:
 
     price_files = portal.latest_by_store(files, "pricefull")
     promo_files = portal.latest_by_store(files, "promofull")
-    wanted = set(args.stores.split(",")) if args.stores else None
+    if args.stores:
+        wanted_list = args.stores.split(",")
+    else:
+        wanted_list = json.loads((Path(__file__).parent / "data" / "config.json").read_text(encoding="utf-8"))["stores"]
+    wanted = None if "all" in wanted_list else {str(int(x)) for x in wanted_list}
     targets = [s for s in stores if s.id in price_files and (wanted is None or s.id in wanted)]
     print(f"stores with PriceFull: {len(targets)}")
 
@@ -187,7 +191,7 @@ def main() -> int:
                 print(f"  store {sid} FAILED")
                 traceback.print_exc()
 
-    coords = geocode.resolve(stores)
+    coords = geocode.resolve([s for s in stores if s.id in results])
     store_rows = []
     for s in stores:
         c = coords.get(s.id, {})

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       stores:
-        description: "comma separated store ids (empty = all)"
+        description: "comma separated store ids or all (empty = config.json)"
         required: false
         default: ""
 permissions:
@@ -37,7 +37,7 @@ jobs:
       - name: Build
         run: python pipeline/build.py --out site --history hist ${{ inputs.stores && format('--stores {0}', inputs.stores) || '' }}
       - name: Save history (single-commit branch)
-        if: ${{ !inputs.stores }}
+        if: ${{ !inputs.stores }}  # ad-hoc runs do not overwrite history
         run: |
           cd hist
           git init -q -b history
