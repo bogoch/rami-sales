@@ -195,42 +195,73 @@ def main():
 
         def items_of(p):
             out = []
-            for grp in p.get("PromotionItems", []):
-                for it in grp.get("Item", []):
-                    out.append(it)
+            for groups in p.get("Groups", []):
+                for g in groups.get("Group", []):
+                    for pis in g.get("PromotionItems", []):
+                        for it in pis.get("PromotionItem", []):
+                            out.append((g, it))
             return out
 
-        n_items = collections.Counter(min(len(items_of(p)), 10) for p in promos)
-        log(f"- items per promo (capped 10): {sorted(n_items.items())}")
+        log(f"- ClubID values: {collections.Counter(p.get('ClubID') for p in promos).most_common(10)}")
+        log(f"- IsGiftItem values: {collections.Counter(p.get('IsGiftItem') for p in promos).most_common(10)}")
+        log(f"- RedemptionLimit values: {collections.Counter(p.get('RedemptionLimit') for p in promos).most_common(8)}")
+        log(f"- groups per promo: {collections.Counter(sum(len(gs.get('Group', [])) for gs in p.get('Groups', [])) for p in promos).most_common(6)}")
+        log(f"- items per promo (capped 20): {sorted(collections.Counter(min(len(items_of(p)), 20) for p in promos).items())}")
+        flat = [it for p in promos for _, it in items_of(p)]
+        log(f"- promo-item rows: {len(flat)}")
+        log(f"- RewardType values: {collections.Counter(i.get('RewardType') for i in flat).most_common(10)}")
+        log(f"- MinQty values: {collections.Counter(i.get('MinQty') for i in flat).most_common(10)}")
+        log(f"- MinPurchaseAmount values: {collections.Counter(g.get('MinPurchaseAmount') for p in promos for g, _ in items_of(p)).most_common(6)}")
+        for rt in sorted({i.get('RewardType') for i in flat}):
+            ex = [p for p in promos if any(it.get('RewardType') == rt for _, it in items_of(p))][:4]
+            log(f"  - RewardType {rt} examples: " + " | ".join(p.get('PromotionDescription', '') for p in ex))
         (OUT / "promofull_sample.json").write_text(json.dumps(promos[:60], ensure_ascii=False, indent=1), encoding="utf-8")
 
-        # quick look at discounts for single-item, single-qty promos
         log()
-        log("## Quick discount check (single item promos)")
+        log("## Discount check (per promo, best item; unit price = DiscountedPrice / MinQty)")
         rows = []
+        unmatched = 0
         for p in promos:
-            its = items_of(p)
-            if len(its) != 1:
-                continue
-            code = its[0].get("ItemCode")
-            base = prices.get(code)
-            try:
-                dp = float(p.get("DiscountedPrice") or 0)
-                mq = float(p.get("MinQty") or 1) or 1
-                bp = float(base.get("ItemPrice")) if base else 0
-            except ValueError:
-                continue
-            if bp <= 0 or dp <= 0:
-                continue
-            unit = dp / mq if mq > 1 and dp > bp else dp
-            pct = round(100 * (1 - unit / bp), 1)
-            rows.append((pct, base.get("ItemName"), bp, dp, mq, p.get("PromotionDescription"), p.get("ClubId")))
+            best = None
+            for g, it in items_of(p):
+                base = prices.get(it.get("ItemCode"))
+                if not base:
+                    unmatched += 1
+                    continue
+                try:
+                    dp = float(it.get("DiscountedPrice") or 0)
+                    mq = float(it.get("MinQty") or 1) or 1
+                    bp = float(base.get("ItemPrice") or 0)
+                    rate = float(it.get("DiscountRate") or 0)
+                except ValueError:
+                    continue
+                if bp <= 0 or dp <= 0:
+                    continue
+                unit = dp / mq
+                pct = round(100 * (1 - unit / bp), 1)
+                row = (pct, round(bp - unit, 2), base.get("ItemName"), bp, dp, mq, rate, p.get("PromotionDescription"), p.get("ClubID"), it.get("RewardType"))
+                if best is None or row > best:
+                    best = row
+            if best:
+                rows.append(best)
         rows.sort(reverse=True)
-        log(f"- computable: {len(rows)}; >=30%: {sum(r[0] >= 30 for r in rows)}; >=20%: {sum(r[0] >= 20 for r in rows)}")
-        for r in rows[:25]:
-            log(f"  - {r[0]}% | {r[1]} | regular {r[2]} | promo {r[3]} x{r[4]} | {r[5]} | club {r[6]}")
-        for r in rows[len(rows) // 2: len(rows) // 2 + 5]:
-            log(f"  - (median-ish) {r[0]}% | {r[1]} | {r[2]} -> {r[3]} x{r[4]} | {r[5]}")
+        log(f"- promos computable: {len(rows)} / {len(promos)}; unmatched item codes: {unmatched}")
+        for th in (10, 20, 30, 40, 50):
+            log(f"- >= {th}%: {sum(r[0] >= th for r in rows)}  (and saving >= 3 NIS: {sum(r[0] >= th and r[1] >= 3 for r in rows)})")
+        neg = [r for r in rows if r[0] < 0]
+        log(f"- negative (promo unit price above regular): {len(neg)}")
+        agree = sum(1 for r in rows if abs(r[0] - r[6]) <= 1.5)
+        log(f"- our % agrees with DiscountRate field (+-1.5): {agree}/{len(rows)}")
+        log("### Top 40")
+        for r in rows[:40]:
+            log(f"  - {r[0]}% (save {r[1]}) | {r[2]} | regular {r[3]} | promo {r[4]} for {r[5]} | DiscountRate {r[6]} | {r[7]} | club {r[8]} | RT {r[9]}")
+        log("### Around 30%")
+        mid = [r for r in rows if 28 <= r[0] <= 32][:10]
+        for r in mid:
+            log(f"  - {r[0]}% (save {r[1]}) | {r[2]} | {r[3]} -> {r[4]} for {r[5]} | {r[7]}")
+        log("### Some negatives")
+        for r in neg[:8]:
+            log(f"  - {r[0]}% | {r[2]} | {r[3]} -> {r[4]} for {r[5]} | DR {r[6]} | {r[7]} | RT {r[9]}")
 
     log()
     log(f"Total time: {time.time() - t0:.1f}s")
