@@ -17,8 +17,8 @@ jobs:
       run:
         working-directory: app
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-java@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-java@v5
         with: { distribution: temurin, java-version: "17" }
       - uses: subosito/flutter-action@v2
         with: { channel: stable, cache: true }
@@ -30,9 +30,13 @@ jobs:
           python3 tool/patch_android.py
       - run: flutter pub get
       - name: Analyze
-        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+        run: |
+          set -o pipefail
+          flutter analyze --no-fatal-infos --no-fatal-warnings 2>&1 | tee ../analyze.log
       - name: Build APK
-        run: flutter build apk --release --build-name=0.1.${{ github.run_number }} --build-number=${{ github.run_number }}
+        run: |
+          set -o pipefail
+          flutter build apk --release --build-name=0.1.${{ github.run_number }} --build-number=${{ github.run_number }} 2>&1 | tee ../build.log
       - name: Sign APK
         id: sign
         env:
@@ -61,3 +65,14 @@ jobs:
           gh release create "$TAG" build/app/outputs/flutter-apk/rami-sales.apk \
             --title "מבצעי רמי $TAG" \
             --notes "גרסה $TAG · $(git log -1 --pretty=%s)" --latest
+      - name: Publish logs on failure
+        if: failure()
+        working-directory: .
+        run: |
+          mkdir -p logs && cp -f analyze.log build.log logs/ 2>/dev/null || true
+          cp app/android/app/src/main/AndroidManifest.xml logs/ 2>/dev/null || true
+          cd logs && git init -q -b ci-logs
+          git config user.name "rami-sales-bot"
+          git config user.email "rami-sales-bot@users.noreply.github.com"
+          git add -A && git commit -qm "ci logs ${{ github.run_number }}" && \
+            git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" ci-logs
