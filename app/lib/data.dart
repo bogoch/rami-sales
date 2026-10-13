@@ -18,9 +18,14 @@ class Loaded<T> {
 }
 
 class Api {
-  Future<File> _cacheFile(String path) async {
-    final dir = await getApplicationSupportDirectory();
-    return File('${dir.path}/cache/${path.replaceAll('/', '_')}');
+  Future<File?> _cacheFile(String path) async {
+    if (kIsWeb) return null; // the browser has its own HTTP cache
+    try {
+      final dir = await getApplicationSupportDirectory();
+      return File('${dir.path}/cache/${path.replaceAll('/', '_')}');
+    } catch (_) {
+      return null;
+    }
   }
 
   /// Fetch JSON from the network, falling back to the last cached copy.
@@ -35,11 +40,13 @@ class Api {
       }
       final body = utf8.decode(res.bodyBytes);
       final json = jsonDecode(body) as Map<String, dynamic>;
-      await cache.parent.create(recursive: true);
-      await cache.writeAsString(body);
+      if (cache != null) {
+        await cache.parent.create(recursive: true);
+        await cache.writeAsString(body);
+      }
       return Loaded(json);
     } catch (e) {
-      if (await cache.exists()) {
+      if (cache != null && await cache.exists()) {
         final json = jsonDecode(await cache.readAsString()) as Map<String, dynamic>;
         return Loaded(json, fromCache: true, error: e.toString());
       }
