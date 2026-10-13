@@ -18,6 +18,8 @@ def load(path: Path = DATA) -> list[dict]:
     cats = json.loads(path.read_text(encoding="utf-8"))["categories"]
     for c in cats:
         c["_inc"] = re.compile("|".join(_term_re(t) for t in c["include"])) if c["include"] else None
+        starts = c.get("includeStart", [])
+        c["_start"] = re.compile("|".join(rf"^ {re.escape(t)}" for t in starts)) if starts else None
         c["_exc"] = re.compile("|".join(_term_re(t) for t in c["exclude"])) if c["exclude"] else None
     return cats
 
@@ -31,7 +33,8 @@ class Categorizer:
         text = " " + " ".join(name.replace("״", '"').replace("׳", "'").split()) + " "
         out = []
         for c in self.cats:
-            if c["_inc"] is None or not c["_inc"].search(text):
+            hit = (c["_inc"] is not None and c["_inc"].search(text)) or (c["_start"] is not None and c["_start"].search(text))
+            if not hit:
                 continue
             if c["_exc"] is not None and c["_exc"].search(text):
                 continue

@@ -1,12 +1,23 @@
 {
- "_doc": "Keyword categories. An item matches a category when its name contains any 'include' term and no 'exclude' term. Terms match at word starts (prefixes like ה/ו/ב are not stripped). 'group' is used for grouping in the app.",
+ "_doc": "Keyword categories. An item matches a category when its name contains any 'include' term and no 'exclude' term. Terms match at word starts (prefixes like ה/ו/ב are not stripped). 'group' is used for grouping in the app. 'includeStart' terms must appear at the very start of the name.",
  "categories": [
   {
    "id": "milk",
    "name": "חלב",
    "group": "מוצרי חלב וביצים",
    "include": [
-    "חלב"
+    "חלב תנובה",
+    "חלב טרה",
+    "חלב יטבתה",
+    "חלב שטראוס",
+    "חלב 3%",
+    "חלב 1%",
+    "חלב 2%",
+    "חלב עיזים",
+    "חלב נטול",
+    "חלב מועשר",
+    "קרטון חלב",
+    "שקית חלב"
    ],
    "exclude": [
     "שוקו",
@@ -41,6 +52,9 @@
     "הארץ",
     "חלבון",
     "חלבה"
+   ],
+   "includeStart": [
+    "חלב"
    ]
   },
   {
@@ -585,7 +599,8 @@
     "חלבה",
     "מטבוחה",
     "פסטו",
-    "מחית"
+    "מחית",
+    "ריבת"
    ],
    "exclude": [
     "חומוס יבש",

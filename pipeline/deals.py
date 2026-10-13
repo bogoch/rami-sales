@@ -61,6 +61,8 @@ def promo_tags(p: Promotion) -> dict:
         tags.append("coupon")
     if "אשראי" in d or (club and "אשראי" in club and "שיווק" not in club):
         tags.append("credit")
+    if "מתנה" in d:
+        tags.append("gift")
     if "ביטוח" in d:
         tags.append("insurance")
     gmin = max((i.group_min_purchase for i in p.items), default=0.0)
