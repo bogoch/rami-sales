@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:phosphor_flutter/phosphor_flutter.dart';
+
+import '../category_style.dart';
 import '../data.dart';
 import '../logic.dart';
 import '../models.dart';
@@ -68,6 +71,7 @@ class _DealsScreenState extends State<DealsScreen> {
         } catch (_) {}
       }
       if (!mounted) return;
+      CategoryStyles.load(cats);
       setState(() {
         _file = r.data;
         _fromCache = r.fromCache;
@@ -157,6 +161,9 @@ class _DealsScreenState extends State<DealsScreen> {
               ),
             ),
             SliverToBoxAdapter(child: _searchField(cs)),
+            if (_cats.isNotEmpty) SliverToBoxAdapter(child: SizedBox(height: 92, child: _groupTiles())),
+            if (_segment == 0 && _query.isEmpty && _group == null && good.length >= 3)
+              SliverToBoxAdapter(child: _hero(good, file!)),
             SliverPersistentHeader(
               pinned: true,
               delegate: _HeaderDelegate(
@@ -182,8 +189,6 @@ class _DealsScreenState extends State<DealsScreen> {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 8),
-                      if (_cats.isNotEmpty) SizedBox(height: 36, child: _groupChips()),
                     ],
                   ),
                 ),
@@ -219,10 +224,14 @@ class _DealsScreenState extends State<DealsScreen> {
                 padding: const EdgeInsets.fromLTRB(12, 8, 12, 32),
                 sliver: SliverList.builder(
                   itemCount: shown.length,
-                  itemBuilder: (_, i) => DealCard(
-                    deal: shown[i],
-                    dataDate: file!.generated,
-                    storeName: s.storeName,
+                  itemBuilder: (_, i) => Appear(
+                    key: ValueKey('${_segment}_${_group}_${shown[i].id}'),
+                    index: i,
+                    child: DealCard(
+                      deal: shown[i],
+                      dataDate: file!.generated,
+                      storeName: s.storeName,
+                    ),
                   ),
                 ),
               ),
@@ -249,27 +258,68 @@ class _DealsScreenState extends State<DealsScreen> {
         ),
       );
 
-  Widget _groupChips() {
+  Widget _groupTiles() {
     final groups = _groups.keys.toList();
-    Widget chip(String label, bool selected, VoidCallback onTap) => Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 3),
-          child: _Pill(
-            label: label,
-            selected: selected,
-            onTap: () {
-              Haptics.select();
-              onTap();
-            },
-          ),
+    Widget tile(String label, GroupStyle st, bool selected, VoidCallback onTap) => _GroupTile(
+          label: label,
+          style: st,
+          selected: selected,
+          onTap: () {
+            Haptics.select();
+            onTap();
+          },
         );
     return ListView(
       scrollDirection: Axis.horizontal,
       physics: kScrollPhysics,
-      padding: const EdgeInsets.symmetric(horizontal: 13),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       children: [
-        chip('הכל', _group == null, () => setState(() => _group = null)),
-        for (final g in groups) chip(g, _group == g, () => setState(() => _group = _group == g ? null : g)),
+        tile('הכל', const GroupStyle(Color(0xFFD62828), PhosphorIconsDuotone.basket), _group == null,
+            () => setState(() => _group = null)),
+        for (final g in groups)
+          tile(_shortGroup(g), CategoryStyles.group(g), _group == g, () => setState(() => _group = _group == g ? null : g)),
       ],
+    );
+  }
+
+  /// Short labels so tiles stay compact.
+  String _shortGroup(String g) => const {
+        'מוצרי חלב וביצים': 'חלב וביצים',
+        'פירות וירקות': 'פירות וירקות',
+        'חטיפים ומתוקים': 'מתוקים',
+        'בית וטיפוח': 'בית וטיפוח',
+        'לחם ומאפים': 'לחם',
+        'בשר ודגים': 'בשר ודגים',
+      }[g] ??
+      g;
+
+  Widget _hero(List<Deal> good, DealsFile file) {
+    // strongest deals that don't need a coupon/insurance, falling back to anything
+    var top = good.where((d) => !d.tags.contains('insurance') && !d.tags.contains('coupon')).toList();
+    if (top.length < 3) top = List.of(good);
+    top.sort((a, b) => b.pct.compareTo(a.pct));
+    top = top.take(6).toList();
+    return Padding(
+      padding: const EdgeInsets.only(top: 4, bottom: 6),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+        Padding(
+          padding: const EdgeInsets.fromLTRB(20, 4, 20, 8),
+          child: Text('הכי שווים היום', style: display(context, 19, weight: FontWeight.w700)),
+        ),
+        SizedBox(
+          height: 156,
+          child: PageView.builder(
+            controller: PageController(viewportFraction: 0.84),
+            padEnds: false,
+            physics: kScrollPhysics,
+            itemCount: top.length,
+            itemBuilder: (_, i) => Padding(
+              padding: EdgeInsetsDirectional.only(start: i == 0 ? 16 : 6, end: 6),
+              child: _HeroCard(deal: top[i], storeName: s.storeName),
+            ),
+          ),
+        ),
+      ]),
     );
   }
 
@@ -287,9 +337,9 @@ class _HeaderDelegate extends SliverPersistentHeaderDelegate {
   _HeaderDelegate({required this.child});
 
   @override
-  double get minExtent => 100;
+  double get minExtent => 60;
   @override
-  double get maxExtent => 100;
+  double get maxExtent => 60;
 
   @override
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) => SizedBox.expand(child: child);
@@ -344,35 +394,99 @@ class _Notice extends StatelessWidget {
   }
 }
 
-class _Pill extends StatelessWidget {
+class _GroupTile extends StatelessWidget {
   final String label;
+  final GroupStyle style;
   final bool selected;
   final VoidCallback onTap;
-  const _Pill({required this.label, required this.selected, required this.onTap});
+  const _GroupTile({required this.label, required this.style, required this.selected, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
     final cs = Theme.of(context).colorScheme;
+    final dark = Theme.of(context).brightness == Brightness.dark;
     return Pressable(
       onTap: onTap,
       pressedScale: 0.94,
-      child: AnimatedContainer(
-        duration: reduceMotion(context) ? Duration.zero : const Duration(milliseconds: 180),
-        curve: Curves.easeOut,
-        alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 14),
-        decoration: BoxDecoration(
-          color: selected ? cs.primary : cs.surfaceContainerHigh,
-          borderRadius: BorderRadius.circular(999),
-        ),
-        child: Text(
-          label,
-          style: TextStyle(
-            fontSize: 13.5,
-            fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
-            color: selected ? cs.onPrimary : cs.onSurface,
+      child: SizedBox(
+        width: 74,
+        child: Column(children: [
+          AnimatedContainer(
+            duration: reduceMotion(context) ? Duration.zero : const Duration(milliseconds: 200),
+            curve: Curves.easeOut,
+            width: 54,
+            height: 54,
+            decoration: BoxDecoration(
+              color: selected ? style.color : style.color.withValues(alpha: dark ? 0.22 : 0.12),
+              borderRadius: BorderRadius.circular(18),
+            ),
+            alignment: Alignment.center,
+            child: PhosphorIcon(
+              style.icon,
+              size: 28,
+              color: selected ? Colors.white : (dark ? Color.lerp(style.color, Colors.white, 0.35) : style.color),
+              duotoneSecondaryColor: selected ? Colors.white : null,
+            ),
           ),
+          const SizedBox(height: 6),
+          Text(label,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(
+                fontSize: 12,
+                fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                color: selected ? cs.onSurface : cs.onSurfaceVariant,
+              )),
+        ]),
+      ),
+    );
+  }
+}
+
+class _HeroCard extends StatelessWidget {
+  final Deal deal;
+  final String storeName;
+  const _HeroCard({required this.deal, required this.storeName});
+
+  @override
+  Widget build(BuildContext context) {
+    final cat = CategoryStyles.primaryCat(deal);
+    final base = CategoryStyles.colorOfCat(cat);
+    final it = deal.best;
+    final hsl = HSLColor.fromColor(base);
+    final c1 = hsl.withLightness((hsl.lightness - 0.08).clamp(0.0, 1.0)).toColor();
+    final c2 = hsl.withHue((hsl.hue + 28) % 360).withLightness((hsl.lightness + 0.04).clamp(0.0, 1.0)).toColor();
+    const white = Colors.white;
+    return Pressable(
+      onTap: () => showDealSheet(context, deal, storeName),
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(24),
+          gradient: LinearGradient(begin: AlignmentDirectional.topStart, end: AlignmentDirectional.bottomEnd, colors: [c1, c2]),
+          boxShadow: [BoxShadow(color: base.withValues(alpha: 0.28), blurRadius: 18, offset: const Offset(0, 8))],
         ),
+        child: Stack(children: [
+          PositionedDirectional(
+            end: -18,
+            bottom: -22,
+            child: PhosphorIcon(CategoryStyles.iconOfCat(cat), size: 120, color: white.withValues(alpha: 0.16)),
+          ),
+          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Text('${deal.pct.round()}%',
+                textDirection: TextDirection.ltr, style: display(context, 38, color: white)),
+            Text('הנחה · חוסכים ₪${money(it.save * deal.buyQty)}',
+                style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5, fontWeight: FontWeight.w600)),
+            const Spacer(),
+            Text(deal.desc,
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(color: white, fontSize: 15, fontWeight: FontWeight.w700, height: 1.25)),
+            const SizedBox(height: 2),
+            Text('${offerText(deal)} · במקום ₪${money(it.regular)}',
+                style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5)),
+          ]),
+        ]),
       ),
     );
   }

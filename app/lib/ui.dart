@@ -128,3 +128,53 @@ class FluidRoute<T> extends PageRouteBuilder<T> {
           },
         );
 }
+
+/// Staggered entrance: fade + small rise, delayed by list position.
+/// Only the first screenful animates; reduced-motion users get no motion.
+class Appear extends StatefulWidget {
+  final int index;
+  final Widget child;
+  const Appear({super.key, required this.index, required this.child});
+
+  @override
+  State<Appear> createState() => _AppearState();
+}
+
+class _AppearState extends State<Appear> with SingleTickerProviderStateMixin {
+  late final AnimationController _c =
+      AnimationController(vsync: this, duration: const Duration(milliseconds: 420));
+  bool _started = false;
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    if (_started) return;
+    _started = true;
+    if (reduceMotion(context) || widget.index > 8) {
+      _c.value = 1;
+    } else {
+      Future.delayed(Duration(milliseconds: 40 * widget.index), () {
+        if (mounted) _c.forward();
+      });
+    }
+  }
+
+  @override
+  void dispose() {
+    _c.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final curve = CurvedAnimation(parent: _c, curve: Curves.easeOutCubic);
+    return FadeTransition(
+      opacity: curve,
+      child: AnimatedBuilder(
+        animation: curve,
+        builder: (_, child) => Transform.translate(offset: Offset(0, 14 * (1 - curve.value)), child: child),
+        child: widget.child,
+      ),
+    );
+  }
+}

@@ -186,8 +186,15 @@ def build_deals(
         meta = promo_tags(p)
         if is_complex:
             meta["tags"].append("complex")
-        cats = sorted({c for d in computed for c in categorize(d.name)})
         computed.sort(key=lambda d: (d.complex, -d.pct, -d.save))
+        # order categories by how many items in the promo carry them (best item breaks ties),
+        # so cats[0] is the promo's primary category
+        counts: dict[str, int] = {}
+        for d in computed:
+            for c in categorize(d.name):
+                counts[c] = counts.get(c, 0) + 1
+        best_cats = categorize(computed[0].name)
+        cats = sorted(counts, key=lambda c: (-counts[c], c not in best_cats, c))
         out.append(
             {
                 "id": p.id,

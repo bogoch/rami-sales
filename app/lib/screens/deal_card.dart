@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+import '../category_style.dart';
 import '../logic.dart';
 import '../models.dart';
 import '../ui.dart';
@@ -27,7 +28,7 @@ class DealCard extends StatelessWidget {
       child: Pressable(
         onTap: () => showDealSheet(context, deal, storeName),
         child: Container(
-          padding: const EdgeInsets.fromLTRB(16, 14, 14, 14),
+          padding: const EdgeInsets.fromLTRB(14, 14, 14, 14),
           decoration: BoxDecoration(
             color: cs.brightness == Brightness.dark ? cs.surfaceContainerHigh : cs.surfaceContainerLowest,
             borderRadius: BorderRadius.circular(20),
@@ -38,6 +39,8 @@ class DealCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              CategoryTile.forDeal(deal, size: 46),
+              const SizedBox(width: 12),
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -116,8 +119,9 @@ class _PctBadge extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
-        Text('${deal.pct.round()}%', textDirection: TextDirection.ltr, style: display(context, 30, color: cs.primary)),
-        Text('הנחה', style: TextStyle(fontSize: 11, color: cs.primary, fontWeight: FontWeight.w600)),
+        Text('${deal.pct.round()}%',
+            textDirection: TextDirection.ltr, style: display(context, 28, color: pctColor(context, deal.pct))),
+        Text('הנחה', style: TextStyle(fontSize: 11, color: pctColor(context, deal.pct), fontWeight: FontWeight.w600)),
         const SizedBox(height: 6),
         Text('₪${money(deal.best.save * deal.buyQty)}',
             textDirection: TextDirection.ltr,
@@ -164,7 +168,11 @@ void showDealSheet(BuildContext context, Deal deal, String storeName) {
           controller: controller,
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
           children: [
-            Text(deal.desc, style: display(ctx, 24, weight: FontWeight.w700)),
+            Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              CategoryTile.forDeal(deal, size: 56),
+              const SizedBox(width: 14),
+              Expanded(child: Text(deal.desc, style: display(ctx, 22, weight: FontWeight.w700))),
+            ]),
             const SizedBox(height: 4),
             Text(
               [
