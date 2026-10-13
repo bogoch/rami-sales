@@ -1,0 +1,63 @@
+name: app-build
+on:
+  push:
+    branches: [main]
+    paths: ["app/**", ".github/workflows/app.yml"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: app-build
+  cancel-in-progress: true
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: "17" }
+      - uses: subosito/flutter-action@v2
+        with: { channel: stable, cache: true }
+      - name: Generate platform folders
+        run: |
+          flutter --version
+          flutter create . --platforms=android --org com.bogoch --project-name rami_sales
+          rm -rf test
+          python3 tool/patch_android.py
+      - run: flutter pub get
+      - name: Analyze
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+      - name: Build APK
+        run: flutter build apk --release --build-name=0.1.${{ github.run_number }} --build-number=${{ github.run_number }}
+      - name: Sign APK
+        id: sign
+        env:
+          KEYSTORE_B64: ${{ secrets.KEYSTORE_B64 }}
+          KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
+        run: |
+          if [ -z "$KEYSTORE_B64" ]; then
+            echo "::warning::KEYSTORE_B64 secret missing - skipping signing and release"
+            echo "signed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "$KEYSTORE_B64" | base64 -d > /tmp/release.jks
+          APKSIGNER=$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)apksigner
+          OUT=build/app/outputs/flutter-apk
+          "$APKSIGNER" sign --ks /tmp/release.jks --ks-pass env:KEYSTORE_PASSWORD --key-pass env:KEYSTORE_PASSWORD \
+            --ks-key-alias ramisales --out "$OUT/rami-sales.apk" "$OUT/app-release.apk"
+          "$APKSIGNER" verify --print-certs "$OUT/rami-sales.apk" | head -3
+          rm /tmp/release.jks
+          echo "signed=true" >> "$GITHUB_OUTPUT"
+      - name: Publish release
+        if: steps.sign.outputs.signed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TAG=v0.1.${{ github.run_number }}
+          gh release create "$TAG" build/app/outputs/flutter-apk/rami-sales.apk \
+            --title "מבצעי רמי $TAG" \
+            --notes "גרסה $TAG · $(git log -1 --pretty=%s)" --latest
