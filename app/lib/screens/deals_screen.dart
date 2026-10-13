@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:phosphor_flutter/phosphor_flutter.dart';
-
 import '../category_style.dart';
 import '../data.dart';
 import '../logic.dart';
@@ -274,7 +272,7 @@ class _DealsScreenState extends State<DealsScreen> {
       physics: kScrollPhysics,
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
       children: [
-        tile('הכל', const GroupStyle(Color(0xFFD62828), PhosphorIconsDuotone.basket), _group == null,
+        tile('הכל', const GroupStyle(Color(0xFFD62828), 'basket'), _group == null,
             () => setState(() => _group = null)),
         for (final g in groups)
           tile(_shortGroup(g), CategoryStyles.group(g), _group == g, () => setState(() => _group = _group == g ? null : g)),
@@ -421,11 +419,10 @@ class _GroupTile extends StatelessWidget {
               borderRadius: BorderRadius.circular(18),
             ),
             alignment: Alignment.center,
-            child: PhosphorIcon(
+            child: PIcon(
               style.icon,
               size: 28,
-              color: selected ? Colors.white : (dark ? Color.lerp(style.color, Colors.white, 0.35) : style.color),
-              duotoneSecondaryColor: selected ? Colors.white : null,
+              color: selected ? Colors.white : (dark ? Color.lerp(style.color, Colors.white, 0.35)! : style.color),
             ),
           ),
           const SizedBox(height: 6),
@@ -470,7 +467,7 @@ class _HeroCard extends StatelessWidget {
           PositionedDirectional(
             end: -18,
             bottom: -22,
-            child: PhosphorIcon(CategoryStyles.iconOfCat(cat), size: 120, color: white.withValues(alpha: 0.16)),
+            child: PIcon(CategoryStyles.iconOfCat(cat), size: 120, color: white.withValues(alpha: 0.18)),
           ),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('${deal.pct.round()}%',
