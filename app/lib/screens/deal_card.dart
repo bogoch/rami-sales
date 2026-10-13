@@ -140,11 +140,11 @@ class _Tag extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
       decoration: BoxDecoration(
-        color: color ?? cs.surfaceContainerHigh,
+        color: color ?? cs.secondaryContainer.withValues(alpha: 0.7),
         borderRadius: BorderRadius.circular(999),
       ),
       child: Text(text,
-          style: TextStyle(fontSize: 11.5, letterSpacing: 0.1, fontWeight: FontWeight.w500, color: fg ?? cs.onSurfaceVariant)),
+          style: TextStyle(fontSize: 11.5, letterSpacing: 0.1, fontWeight: FontWeight.w500, color: fg ?? cs.onSecondaryContainer)),
     );
   }
 }

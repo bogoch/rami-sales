@@ -43,13 +43,18 @@ jobs:
           KEYSTORE_B64: ${{ secrets.KEYSTORE_B64 }}
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
         run: |
+          exec > >(tee ../sign.log) 2>&1
           if [ -z "$KEYSTORE_B64" ]; then
             echo "::warning::KEYSTORE_B64 secret missing - skipping signing and release"
             echo "signed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
-          echo "$KEYSTORE_B64" | base64 -d > /tmp/release.jks
-          APKSIGNER=$(ls -d "$ANDROID_HOME"/build-tools/*/ | sort -V | tail -1)apksigner
+          echo "$KEYSTORE_B64" | tr -d ' \r\n' | base64 -d > /tmp/release.jks
+          echo "keystore bytes: $(wc -c < /tmp/release.jks), password length: ${#KEYSTORE_PASSWORD}"
+          SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
+          APKSIGNER=$(find "$SDK/build-tools" -name apksigner -type f | sort -V | tail -1)
+          echo "apksigner: $APKSIGNER"
+          export KEYSTORE_PASSWORD="$(printf '%s' "$KEYSTORE_PASSWORD" | tr -d '\r\n')"
           OUT=build/app/outputs/flutter-apk
           "$APKSIGNER" sign --ks /tmp/release.jks --ks-pass env:KEYSTORE_PASSWORD --key-pass env:KEYSTORE_PASSWORD \
             --ks-key-alias ramisales --out "$OUT/rami-sales.apk" "$OUT/app-release.apk"
@@ -69,7 +74,7 @@ jobs:
         if: failure()
         working-directory: .
         run: |
-          mkdir -p logs && cp -f analyze.log build.log logs/ 2>/dev/null || true
+          mkdir -p logs && cp -f analyze.log build.log sign.log logs/ 2>/dev/null || true
           cp app/android/app/src/main/AndroidManifest.xml logs/ 2>/dev/null || true
           cd logs && git init -q -b ci-logs
           git config user.name "rami-sales-bot"

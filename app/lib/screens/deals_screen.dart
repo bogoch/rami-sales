@@ -183,7 +183,7 @@ class _DealsScreenState extends State<DealsScreen> {
                         ),
                       ),
                       const SizedBox(height: 8),
-                      if (_cats.isNotEmpty) SizedBox(height: 40, child: _groupChips()),
+                      if (_cats.isNotEmpty) SizedBox(height: 36, child: _groupChips()),
                     ],
                   ),
                 ),
@@ -253,13 +253,10 @@ class _DealsScreenState extends State<DealsScreen> {
     final groups = _groups.keys.toList();
     Widget chip(String label, bool selected, VoidCallback onTap) => Padding(
           padding: const EdgeInsets.symmetric(horizontal: 3),
-          child: ChoiceChip(
-            label: Text(label),
+          child: _Pill(
+            label: label,
             selected: selected,
-            showCheckmark: false,
-            visualDensity: VisualDensity.compact,
-            shape: const StadiumBorder(),
-            onSelected: (_) {
+            onTap: () {
               Haptics.select();
               onTap();
             },
@@ -343,6 +340,40 @@ class _Notice extends StatelessWidget {
         Expanded(child: Text(text, style: TextStyle(color: cs.onSecondaryContainer))),
         TextButton(onPressed: onAction, child: Text(action)),
       ]),
+    );
+  }
+}
+
+class _Pill extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final VoidCallback onTap;
+  const _Pill({required this.label, required this.selected, required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    final cs = Theme.of(context).colorScheme;
+    return Pressable(
+      onTap: onTap,
+      pressedScale: 0.94,
+      child: AnimatedContainer(
+        duration: reduceMotion(context) ? Duration.zero : const Duration(milliseconds: 180),
+        curve: Curves.easeOut,
+        alignment: Alignment.center,
+        padding: const EdgeInsets.symmetric(horizontal: 14),
+        decoration: BoxDecoration(
+          color: selected ? cs.primary : cs.surfaceContainerHigh,
+          borderRadius: BorderRadius.circular(999),
+        ),
+        child: Text(
+          label,
+          style: TextStyle(
+            fontSize: 13.5,
+            fontWeight: selected ? FontWeight.w600 : FontWeight.w500,
+            color: selected ? cs.onPrimary : cs.onSurface,
+          ),
+        ),
+      ),
     );
   }
 }
