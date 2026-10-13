@@ -133,6 +133,18 @@ def process_store(store_id, price_file, promo_file, dl, cat, out, hist_dir, toda
         "cols": ["code", "name", "manuf", "price", "unit", "perUnit", "cats", "min30", "promoId"],
         "rows": rows,
     })
+    # category coverage stats (for tuning categories.json)
+    import collections
+    cov = collections.Counter(c for row in rows for c in row[6])
+    uncat = [row[1] for row in rows if not row[6]]
+    words = collections.Counter(w for n in uncat for w in n.split()[:2] if len(w) > 2 and not w[0].isdigit())
+    dump(out / "stats" / f"{store_id}.json", {
+        "items": len(rows),
+        "categorized": len(rows) - len(uncat),
+        "perCategory": dict(cov.most_common()),
+        "topUncategorizedWords": words.most_common(150),
+        "dealsUncategorized": [d["desc"] for d in deals if not d["cats"]][:100],
+    })
     good30 = sum(1 for d in deals if d["pct"] >= 30 and d["save"] >= 3)
     return {
         "store": store_id,
