@@ -194,7 +194,8 @@ def build_deals(
             for c in categorize(d.name):
                 counts[c] = counts.get(c, 0) + 1
         best_cats = categorize(computed[0].name)
-        cats = sorted(counts, key=lambda c: (-counts[c], c not in best_cats, c))
+        order = {c["id"]: i for i, c in enumerate(getattr(categorize, "cats", []))}
+        cats = sorted(counts, key=lambda c: (-counts[c], c not in best_cats, order.get(c, 999)))
         out.append(
             {
                 "id": p.id,
