@@ -104,12 +104,12 @@ class Store {
         deals = (j['deals'] as num?)?.toInt() ?? 0;
 }
 
-class Category {
+class ProductCategory {
   final String id;
   final String name;
   final String group;
 
-  Category.fromJson(Map<String, dynamic> j)
+  ProductCategory.fromJson(Map<String, dynamic> j)
       : id = j['id'] as String,
         name = j['name'] as String,
         group = j['group'] as String;

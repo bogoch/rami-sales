@@ -19,7 +19,7 @@ class DealsScreen extends StatefulWidget {
 
 class _DealsScreenState extends State<DealsScreen> {
   DealsFile? _file;
-  List<Category> _cats = [];
+  List<ProductCategory> _cats = [];
   bool _loading = true;
   String? _error;
   bool _fromCache = false;

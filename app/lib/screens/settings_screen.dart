@@ -9,7 +9,7 @@ import 'store_picker.dart';
 class SettingsScreen extends StatelessWidget {
   final Settings settings;
   final Api api;
-  final List<Category> categories;
+  final List<ProductCategory> categories;
   const SettingsScreen({super.key, required this.settings, required this.api, required this.categories});
 
   @override
@@ -19,7 +19,7 @@ class SettingsScreen extends StatelessWidget {
       builder: (context, _) {
         final s = settings;
         final tt = Theme.of(context).textTheme;
-        final groups = <String, List<Category>>{};
+        final groups = <String, List<ProductCategory>>{};
         for (final c in categories) {
           groups.putIfAbsent(c.group, () => []).add(c);
         }
@@ -110,7 +110,7 @@ class SettingsScreen extends StatelessWidget {
     );
   }
 
-  String _hiddenSummary(List<Category> cats, Settings s) {
+  String _hiddenSummary(List<ProductCategory> cats, Settings s) {
     final n = cats.where((c) => s.hiddenCats.contains(c.id)).length;
     if (n == 0) return 'הכל מוצג';
     if (n == cats.length) return 'הכל מוסתר';

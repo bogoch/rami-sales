@@ -59,10 +59,10 @@ class Api {
         .toList();
   }
 
-  Future<List<Category>> categories() async {
+  Future<List<ProductCategory>> categories() async {
     final r = await _getJson('categories.json');
     return (r.data['categories'] as List)
-        .map((e) => Category.fromJson(e as Map<String, dynamic>))
+        .map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
         .toList();
   }
 }
