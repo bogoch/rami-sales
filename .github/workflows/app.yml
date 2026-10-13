@@ -54,7 +54,11 @@ jobs:
           SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-/usr/local/lib/android/sdk}}"
           APKSIGNER=$(find "$SDK/build-tools" -name apksigner -type f | sort -V | tail -1)
           echo "apksigner: $APKSIGNER"
-          export KEYSTORE_PASSWORD="$(printf '%s' "$KEYSTORE_PASSWORD" | tr -d '\r\n')"
+          # Accept either the bare password or the whole README text that contains "KEYSTORE_PASSWORD = <pw>"
+          PW_LINE=$(printf '%s\n' "$KEYSTORE_PASSWORD" | grep -oE 'KEYSTORE_PASSWORD *= *[A-Za-z0-9_-]+' | head -1 | sed -E 's/.*= *//')
+          if [ -n "$PW_LINE" ]; then KEYSTORE_PASSWORD="$PW_LINE"; fi
+          export KEYSTORE_PASSWORD="$(printf '%s' "$KEYSTORE_PASSWORD" | tr -d '\r\n ')"
+          echo "password length after cleanup: ${#KEYSTORE_PASSWORD}"
           OUT=build/app/outputs/flutter-apk
           "$APKSIGNER" sign --ks /tmp/release.jks --ks-pass env:KEYSTORE_PASSWORD --key-pass env:KEYSTORE_PASSWORD \
             --ks-key-alias ramisales --out "$OUT/rami-sales.apk" "$OUT/app-release.apk"
