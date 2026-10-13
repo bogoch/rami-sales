@@ -1,0 +1,24 @@
+name: stage0-probe
+on:
+  workflow_dispatch:
+  push:
+    paths: ["stage0/probe.py", ".github/workflows/stage0-probe.yml"]
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: curl -s https://ipapi.co/json/ | head -c 400 || true
+      - run: python stage0/probe.py
+      - if: always()
+        run: |
+          git config user.name "probe-bot"
+          git config user.email "probe-bot@users.noreply.github.com"
+          git add -f stage0/out || true
+          git commit -m "stage0 probe output" || exit 0
+          git push
