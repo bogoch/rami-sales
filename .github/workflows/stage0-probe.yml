@@ -1,8 +1,6 @@
 name: stage0-probe
 on:
   workflow_dispatch:
-  push:
-    paths: ["stage0/probe.py", ".github/workflows/stage0-probe.yml"]
 permissions:
   contents: write
 jobs:

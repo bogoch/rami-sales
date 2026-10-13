@@ -1,0 +1,58 @@
+name: daily-build
+on:
+  schedule:
+    - cron: "23 1 * * *"   # ~04:23 Israel summer time / 03:23 winter
+  workflow_dispatch:
+    inputs:
+      stores:
+        description: "comma separated store ids (empty = all)"
+        required: false
+        default: ""
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+concurrency:
+  group: daily-build
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Tests
+        run: python pipeline/tests/test_pipeline.py
+      - name: Restore history
+        run: |
+          git clone --depth 1 --branch history \
+            "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" hist \
+            || mkdir -p hist
+          rm -rf hist/.git
+      - name: Build
+        run: python pipeline/build.py --out site --history hist ${{ inputs.stores && format('--stores {0}', inputs.stores) || '' }}
+      - name: Save history (single-commit branch)
+        if: ${{ !inputs.stores }}
+        run: |
+          cd hist
+          git init -q -b history
+          git config user.name "rami-sales-bot"
+          git config user.email "rami-sales-bot@users.noreply.github.com"
+          git add -A
+          git commit -qm "history $(date -u +%F)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" history
+      - name: Save geocode cache
+        run: |
+          git config user.name "rami-sales-bot"
+          git config user.email "rami-sales-bot@users.noreply.github.com"
+          git add pipeline/data/store_coords.json
+          git diff --cached --quiet || (git commit -m "update store coordinates cache" && git push)
+      - uses: actions/upload-pages-artifact@v3
+        with: { path: site }
+      - id: deploy
+        uses: actions/deploy-pages@v4
