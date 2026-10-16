@@ -116,12 +116,13 @@ class ProductCategory {
 }
 
 /// Cleans Rami Levy's terse promo descriptions and fixes bidi-hostile patterns:
-/// "2ב10" renders as "10ב2" in RTL, so it becomes "2 ב-10"; "מו3" → "(מוגבל ל-3)".
+/// "2ב10" renders as "10ב2" in RTL, so it becomes "2 ב־10" — the Hebrew maqaf (U+05BE) is a strong
+/// RTL character, unlike "-", so the number stays after the letter. "מו3" → "(מוגבל ל־3)".
 String prettyDesc(String s) {
   var t = ' $s ';
-  t = t.replaceAllMapped(RegExp(r'(?<=\s)(\d+)\s*ב\s*-?\s*(\d+(?:\.\d+)?)'), (m) => '${m[1]} ב-${m[2]}');
-  t = t.replaceAllMapped(RegExp(r'(?<=\s)ב(\d+(?:\.\d+)?)'), (m) => 'ב-${m[1]}');
-  t = t.replaceAllMapped(RegExp(r'(?<=\s)מו(\d+)(?=\s)'), (m) => '(מוגבל ל-${m[1]})');
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)(\d+)\s*ב\s*-?\s*(\d+(?:\.\d+)?)'), (m) => '${m[1]} ב־${m[2]}');
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)ב-?(\d+(?:\.\d+)?)'), (m) => 'ב־${m[1]}');
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)מו(\d+)(?=\s)'), (m) => '(מוגבל ל־${m[1]})');
   const words = {
     ' ש ח ': ' ₪ ',
     ' מ ל ': ' מ"ל ',

@@ -49,6 +49,17 @@ with sync_playwright() as p:
             time.sleep(1)
             page.mouse.click(104, 28)  # cart -> list
             time.sleep(4)
+            page.mouse.click(200, 84)  # add field
+            time.sleep(0.5)
+            page.keyboard.type("חלב תנובה", delay=60)
+            time.sleep(2.5)
+            page.screenshot(path=f"{out}/list-search.png")
+            page.mouse.click(200, 230)  # first catalog suggestion (below the free-text row)
+            time.sleep(1)
+            page.mouse.click(200, 84)
+            page.keyboard.type("עגבניות", delay=60)
+            page.keyboard.press("Enter")
+            time.sleep(2)
             page.screenshot(path=f"{out}/list.png")
         ctx.close()
     b.close()

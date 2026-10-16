@@ -52,7 +52,7 @@ List<String> tagTexts(Deal d) {
     if (t == 'minBasket') {
       out.add(d.minBasket != null ? 'בקנייה מעל ₪${money(d.minBasket!)}' : 'מותנה בסכום קנייה');
     } else if (t == 'limit') {
-      out.add('מוגבל ל-${d.limit}');
+      out.add('מוגבל ל־${d.limit}');
     } else if (tagLabels.containsKey(t)) {
       out.add(tagLabels[t]!);
     }
@@ -64,7 +64,7 @@ List<String> tagTexts(Deal d) {
 String offerText(Deal d) {
   final it = d.best;
   if (d.buyQty > 1) {
-    return '${d.buyQty.round()} ב-₪${money(it.promo * d.buyQty)}';
+    return '${d.buyQty.round()} ב־₪${money(it.promo * d.buyQty)}';
   }
   return '₪${money(it.promo)}${it.unit == 'kg' && it.regPU == it.regular ? ' לק״ג' : ''}';
 }
