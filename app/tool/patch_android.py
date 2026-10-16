@@ -47,3 +47,20 @@ xml.mkdir(parents=True, exist_ok=True)
     encoding="utf-8",
 )
 print(s)
+
+# Core library desugaring (required by ota_update)
+kts = Path("android/app/build.gradle.kts")
+groovy = Path("android/app/build.gradle")
+if kts.exists():
+    g = kts.read_text(encoding="utf-8")
+    if "isCoreLibraryDesugaringEnabled" not in g:
+        g = g.replace("compileOptions {", "compileOptions {\n        isCoreLibraryDesugaringEnabled = true", 1)
+        g += '\ndependencies {\n    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")\n}\n'
+        kts.write_text(g, encoding="utf-8")
+elif groovy.exists():
+    g = groovy.read_text(encoding="utf-8")
+    if "coreLibraryDesugaringEnabled" not in g:
+        g = g.replace("compileOptions {", "compileOptions {\n        coreLibraryDesugaringEnabled true", 1)
+        g += "\ndependencies {\n    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'\n}\n"
+        groovy.write_text(g, encoding="utf-8")
+print("desugaring patched:", kts.exists() or groovy.exists())
