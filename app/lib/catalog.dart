@@ -58,9 +58,11 @@ class Catalog {
 }
 
 /// Effective unit price for a product given today's deals (promo unit price when on sale).
-({double price, Deal? deal, DealItem? item}) effectivePrice(Product p, Map<String, Deal> dealsById) {
+/// Deals carrying any of [skipTags] (e.g. coupons that need clipping) don't count.
+({double price, Deal? deal, DealItem? item}) effectivePrice(Product p, Map<String, Deal> dealsById,
+    {Set<String> skipTags = const {}}) {
   final d = p.promoId == null ? null : dealsById[p.promoId];
-  if (d != null && !d.isComplex) {
+  if (d != null && !d.isComplex && !d.tags.any(skipTags.contains)) {
     for (final it in d.items) {
       if (it.code == p.code && !it.complex) return (price: it.promo, deal: d, item: it);
     }

@@ -32,6 +32,9 @@ class _ListScreenState extends State<ListScreen> {
 
   ShoppingList get sl => ShoppingList.instance;
 
+  /// Coupons / insurance perks need extra steps, so the estimate ignores them (plus anything the user hid).
+  Set<String> get _skip => {...widget.settings.hiddenTags, 'coupon', 'insurance'};
+
   @override
   void initState() {
     super.initState();
@@ -67,7 +70,7 @@ class _ListScreenState extends State<ListScreen> {
   ({double price, Deal? deal, DealItem? item})? _priceOf(ListItem i) {
     final p = i.code == null ? null : _catalog?.byCode[i.code];
     if (p == null) return null;
-    return effectivePrice(p, _dealsById);
+    return effectivePrice(p, _dealsById, skipTags: _skip);
   }
 
   @override
@@ -196,7 +199,7 @@ class _ListScreenState extends State<ListScreen> {
         ),
         for (final p in list)
           Builder(builder: (context) {
-            final ep = effectivePrice(p, _dealsById);
+            final ep = effectivePrice(p, _dealsById, skipTags: _skip);
             final c = p.cats.isEmpty ? null : p.cats.first;
             return ListTile(
               leading: ProductImage(
