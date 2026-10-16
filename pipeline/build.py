@@ -55,10 +55,32 @@ def save_history(path: Path, hist: dict) -> None:
     path.write_bytes(gzip.compress(json.dumps(hist, separators=(",", ":")).encode(), 9))
 
 
-def process_store(store_id, price_file, promo_file, dl, cat, out, hist_dir, today, generated):
+def process_store(store_id, price_file, promo_file, dl, cat, out, hist_dir, today, generated, files=()):
     t0 = time.time()
     items = parse_prices(dl.get(price_file.name))
     promos = parse_promos(dl.get(promo_file.name)) if promo_file else []
+
+    # ---- intraday partial updates published after the nightly full files
+    applied = []
+    for f in portal.deltas_after(list(files), "price", store_id, price_file.ts):
+        try:
+            items.update(parse_prices(dl.get(f.name)))
+            applied.append(f.name)
+        except Exception as e:  # noqa: BLE001 - a broken delta must not kill the build
+            print(f"  skip delta {f.name}: {e!r}")
+    if promo_file:
+        by_id = {p.id: p for p in promos}
+        for f in portal.deltas_after(list(files), "promo", store_id, promo_file.ts):
+            try:
+                for p in parse_promos(dl.get(f.name)):
+                    by_id[p.id] = p
+                applied.append(f.name)
+            except Exception as e:  # noqa: BLE001
+                print(f"  skip delta {f.name}: {e!r}")
+        promos = list(by_id.values())
+    # drop promotions that already ended
+    iso_now = f"{today[:4]}-{today[4:6]}-{today[6:]}"
+    promos = [p for p in promos if not p.end or p.end[:10] >= iso_now]
 
     # ---- history: daily regular price + first-seen date per promotion
     hpath = hist_dir / f"{store_id}.json.gz"
@@ -101,7 +123,7 @@ def process_store(store_id, price_file, promo_file, dl, cat, out, hist_dir, toda
         "schema": SCHEMA,
         "store": store_id,
         "generated": generated,
-        "source": {"prices": price_file.name, "promos": promo_file.name if promo_file else None},
+        "source": {"prices": price_file.name, "promos": promo_file.name if promo_file else None, "deltas": applied},
         "minPct": MIN_EXPORT_PCT,
         "deals": deals,
     })
@@ -148,6 +170,7 @@ def process_store(store_id, price_file, promo_file, dl, cat, out, hist_dir, toda
     good30 = sum(1 for d in deals if d["pct"] >= 30 and d["save"] >= 3)
     return {
         "store": store_id,
+        "deltas": len(applied),
         "items": len(items),
         "promos": len(promos),
         "deals": len(deals),
@@ -189,7 +212,7 @@ def main() -> int:
     results, failures = {}, []
     with ThreadPoolExecutor(max_workers=args.threads) as ex:
         futs = {
-            ex.submit(process_store, s.id, price_files[s.id], promo_files.get(s.id), dl, cat, out, hist_dir, today, generated): s.id
+            ex.submit(process_store, s.id, price_files[s.id], promo_files.get(s.id), dl, cat, out, hist_dir, today, generated, files): s.id
             for s in targets
         }
         for fut in as_completed(futs):

@@ -1,7 +1,7 @@
 name: daily-build
 on:
   schedule:
-    - cron: "23 1 * * *"   # ~04:23 Israel summer time / 03:23 winter
+    - cron: "23 */3 * * *"   # every 3 hours (nightly full files + intraday partial updates)
   workflow_dispatch:
     inputs:
       stores:

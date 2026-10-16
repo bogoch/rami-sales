@@ -26,24 +26,31 @@ PROMOS = "<Root><Promotions>" + "".join([
     promo("F", "טחינה מצטרפים", [("1", "3", "1", "5.90", "18.06")], club="(1=מועדון חברתי)", gmin="75.00"),
 ]) + "</Promotions></Root>"
 
+DELTA_PROMO = "<Root><Promotions>" + promo("E", "חומוס ב5.90", [("6", "3", "1", "5.90", "45.87")]) + "</Promotions></Root>"
+DELTA_PRICE = """<Root><Items><Item><ItemCode>5</ItemCode><ItemName>שמיר רמי לוי</ItemName><Quantity>1</Quantity><UnitOfMeasure>יחידות</UnitOfMeasure><bIsWeighted>0</bIsWeighted><ItemPrice>5.50</ItemPrice></Item></Items></Root>"""
+
 class FakeDL:
     def get(self, name):
-        return (PRICES if name == "p" else PROMOS).encode()
+        return {"p": PRICES, "q": PROMOS, "dq": DELTA_PROMO, "dp": DELTA_PRICE}[name].encode()
 
 class F:
-    def __init__(self, n): self.name = n
+    def __init__(self, n, ts="20261013000000"): self.name = n; self.ts = ts
 
 def test_build():
     with tempfile.TemporaryDirectory() as d:
         out, hist = Path(d) / "site", Path(d) / "hist"
-        r = build.process_store("23", F("p"), F("q"), FakeDL(), Categorizer(), out, hist, "20261013", "x")
+        from portal import RemoteFile
+        files = [RemoteFile("dq", "promo", "23", "20261013120000", 1), RemoteFile("dp", "price", "23", "20261013120000", 1),
+                 RemoteFile("old", "promo", "23", "20261012120000", 1), RemoteFile("other", "promo", "24", "20261013120000", 1)]
+        r = build.process_store("23", F("p"), F("q"), FakeDL(), Categorizer(), out, hist, "20261013", "x", files)
+        assert r["deltas"] == 2, r
         deals = {x["id"]: x for x in json.loads((out / "deals/23.json").read_text())["deals"]}
+        assert deals["E"]["pct"] == 45.9, deals.get("E")  # updated intraday promo now qualifies
         assert deals["A"]["pct"] == 86.1 and "coupon" in deals["A"]["tags"], deals["A"]
         assert deals["B"]["pct"] == 25.0, deals["B"]
         assert deals["C"]["pct"] == 43.5 and deals["C"]["limit"] == 3, deals["C"]
         # chair mismatched with the herbs promo is complex; herbs item not computable either (pct ~ -2)... D herbs: 15/3=5 > 4.90 regular -> complex
         assert "D" not in deals or "complex" in deals["D"]["tags"], deals.get("D")
-        assert "E" not in deals  # 3.7% -> below export threshold
         assert {"club", "minBasket"} <= set(deals["F"]["tags"]) and deals["F"]["minBasket"] == 75.0, deals["F"]
         assert "milk" in deals["A"]["cats"], deals["A"]["cats"]
         assert deals["A"]["items"][0]["regPU"] == 7.2 and deals["A"]["items"][0]["unit"] == "l"

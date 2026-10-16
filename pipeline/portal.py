@@ -59,7 +59,7 @@ def list_files() -> list[RemoteFile]:
                 name=name,
                 kind=m["kind"].lower(),
                 store=str(int(m["store"])),
-                ts=m["ts"].replace("-", ""),
+                ts=m["ts"].replace("-", "").ljust(14, "0"),
                 size=size,
             )
         )
@@ -120,3 +120,8 @@ class Downloader:
                 self._drop()
                 time.sleep(2 * (attempt + 1))
         raise RuntimeError(f"download failed for {name}: {last!r}")
+
+
+def deltas_after(files: list[RemoteFile], kind: str, store: str, after_ts: str) -> list[RemoteFile]:
+    """Intraday partial files (kind 'price' / 'promo') for a store, newer than the full file, oldest first."""
+    return sorted((f for f in files if f.kind == kind and f.store == store and f.ts > after_ts), key=lambda f: f.ts)
