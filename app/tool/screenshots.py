@@ -23,12 +23,12 @@ with sync_playwright() as p:
             page.mouse.click(195, 560)
             time.sleep(2.5)
             page.screenshot(path=f"{out}/sheet.png")
-            page.mouse.click(70, 1150 // 2)  # click the star next to the item (approx)
+            page.mouse.click(35, 577)  # star next to the item
             page.keyboard.press("Escape")
             time.sleep(1)
             page.mouse.click(195, 100)
-            time.sleep(0.5)
-            page.mouse.click(128, 56)  # bell -> watch screen
+            time.sleep(1)
+            page.mouse.click(64, 28)  # bell -> watch screen
             time.sleep(2.5)
             page.screenshot(path=f"{out}/watch.png")
         ctx.close()
