@@ -1,0 +1,15 @@
+name: images-probe
+on: workflow_dispatch
+permissions:
+  contents: write
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - run: python3 stage0/images_probe.py
+      - if: always()
+        run: |
+          cd imgprobe && git init -q -b debug-images
+          git config user.name "rami-sales-bot"; git config user.email "rami-sales-bot@users.noreply.github.com"
+          git add -A && git commit -qm probe && git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" debug-images

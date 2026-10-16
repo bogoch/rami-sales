@@ -196,6 +196,11 @@ def build_deals(
         best_cats = categorize(computed[0].name)
         order = {c["id"]: i for i, c in enumerate(getattr(categorize, "cats", []))}
         cats = sorted(counts, key=lambda c: (-counts[c], c not in best_cats, order.get(c, 999)))
+        # Keep only categories that cover a real share of the promo's items, so one odd item
+        # (e.g. a deodorant "with green tea") doesn't put the whole promo under drinks.
+        if cats:
+            top = counts[cats[0]]
+            cats = [c for c in cats if c == cats[0] or counts[c] >= max(2, 0.4 * top)][:3]
         out.append(
             {
                 "id": p.id,

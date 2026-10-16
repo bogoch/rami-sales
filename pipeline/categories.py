@@ -8,6 +8,7 @@ from pathlib import Path
 
 DATA = Path(__file__).parent / "data" / "categories.json"
 PREFIX = "[הובלמשכ]"
+NON_FOOD_GROUPS = {"בית וטיפוח"}
 
 
 def _term_re(term: str) -> str:
@@ -38,8 +39,12 @@ class Categorizer:
                 continue
             if c["_exc"] is not None and c["_exc"].search(text):
                 continue
-            out.append(c["id"])
-        return tuple(out)
+            out.append(c)
+        # Non-food wins: a shower gel "with grapefruit scent" is not fruit.
+        non_food = [c for c in out if c["group"] in NON_FOOD_GROUPS]
+        if non_food:
+            out = non_food
+        return tuple(c["id"] for c in out)
 
     def public(self) -> list[dict]:
         return [{"id": c["id"], "name": c["name"], "group": c["group"]} for c in self.cats]
