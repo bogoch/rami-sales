@@ -4,6 +4,7 @@ import '../category_style.dart';
 import '../data.dart';
 import '../logic.dart';
 import '../models.dart';
+import '../product_image.dart';
 import '../settings.dart';
 import '../ui.dart';
 import 'deal_card.dart';
@@ -465,9 +466,13 @@ class _HeroCard extends StatelessWidget {
         ),
         child: Stack(children: [
           PositionedDirectional(
-            end: -18,
-            bottom: -22,
-            child: PIcon(CategoryStyles.iconOfCat(cat), size: 120, color: white.withValues(alpha: 0.18)),
+            end: 0,
+            top: 0,
+            child: ProductImage(
+              code: it.code,
+              size: 76,
+              fallback: PIcon(CategoryStyles.iconOfCat(cat), size: 76, color: white.withValues(alpha: 0.22)),
+            ),
           ),
           Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
             Text('${deal.pct.round()}%',

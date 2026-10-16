@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 import '../category_style.dart';
 import '../logic.dart';
 import '../models.dart';
+import '../product_image.dart';
 import '../ui.dart';
 
 class DealCard extends StatelessWidget {
@@ -39,7 +40,7 @@ class DealCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CategoryTile.forDeal(deal, size: 46),
+              ProductImage(code: deal.best.code, size: 64, fallback: CategoryTile.forDeal(deal, size: 64)),
               const SizedBox(width: 12),
               Expanded(
                 child: Column(
@@ -169,7 +170,7 @@ void showDealSheet(BuildContext context, Deal deal, String storeName) {
           padding: const EdgeInsets.fromLTRB(16, 0, 16, 24),
           children: [
             Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              CategoryTile.forDeal(deal, size: 56),
+              ProductImage(code: deal.best.code, size: 72, large: true, fallback: CategoryTile.forDeal(deal, size: 72)),
               const SizedBox(width: 14),
               Expanded(child: Text(deal.desc, style: display(ctx, 22, weight: FontWeight.w700))),
             ]),
@@ -209,7 +210,7 @@ void showDealSheet(BuildContext context, Deal deal, String storeName) {
             ]),
             const SizedBox(height: 16),
             Text('מוצרים במבצע (${deal.items.length})', style: tt.titleSmall),
-            for (final it in deal.items) _ItemRow(item: it, deal: deal),
+            for (final it in deal.items.take(60)) _ItemRow(item: it, deal: deal),
           ],
         ),
       );
@@ -237,6 +238,7 @@ class _ItemRow extends StatelessWidget {
     ];
     return ListTile(
       contentPadding: EdgeInsets.zero,
+      leading: ProductImage(code: item.code, size: 48, fallback: CategoryTile.forDeal(deal, size: 48)),
       title: Text(item.name),
       subtitle: Text(lines.join('\n')),
       isThreeLine: lines.length > 1,
