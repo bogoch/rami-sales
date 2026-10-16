@@ -7,13 +7,15 @@ import '../models.dart';
 import '../product_image.dart';
 import '../settings.dart';
 import '../ui.dart';
+import '../updater.dart';
 import 'deal_card.dart';
 import 'settings_screen.dart';
 
 class DealsScreen extends StatefulWidget {
   final Settings settings;
   final Api api;
-  const DealsScreen({super.key, required this.settings, required this.api});
+  final Updater updater;
+  const DealsScreen({super.key, required this.settings, required this.api, required this.updater});
 
   @override
   State<DealsScreen> createState() => _DealsScreenState();
@@ -37,12 +39,15 @@ class _DealsScreenState extends State<DealsScreen> {
     super.initState();
     _loadedStore = s.storeId;
     s.addListener(_onSettings);
+    widget.updater.addListener(_onSettings);
     _load();
+    widget.updater.check();
   }
 
   @override
   void dispose() {
     s.removeListener(_onSettings);
+    widget.updater.removeListener(_onSettings);
     super.dispose();
   }
 
@@ -95,7 +100,7 @@ class _DealsScreenState extends State<DealsScreen> {
   }
 
   void _openSettings() => Navigator.of(context).push(FluidRoute(
-        builder: (_) => SettingsScreen(settings: s, api: widget.api, categories: _cats),
+        builder: (_) => SettingsScreen(settings: s, api: widget.api, categories: _cats, updater: widget.updater),
       ));
 
   @override
@@ -193,6 +198,14 @@ class _DealsScreenState extends State<DealsScreen> {
                 ),
               ),
             ),
+            if (widget.updater.available != null)
+              SliverToBoxAdapter(
+                child: _Notice(
+                  text: 'גרסה חדשה ${widget.updater.available!.name} זמינה',
+                  action: 'עדכן',
+                  onAction: () => showUpdateSheet(context, widget.updater.available!),
+                ),
+              ),
             if (_fromCache)
               SliverToBoxAdapter(
                 child: _Notice(

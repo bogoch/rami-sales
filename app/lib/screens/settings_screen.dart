@@ -4,18 +4,21 @@ import '../data.dart';
 import '../models.dart';
 import '../settings.dart';
 import '../ui.dart';
+import '../updater.dart';
 import 'store_picker.dart';
 
 class SettingsScreen extends StatelessWidget {
   final Settings settings;
   final Api api;
   final List<ProductCategory> categories;
-  const SettingsScreen({super.key, required this.settings, required this.api, required this.categories});
+  final Updater updater;
+  const SettingsScreen(
+      {super.key, required this.settings, required this.api, required this.categories, required this.updater});
 
   @override
   Widget build(BuildContext context) {
     return ListenableBuilder(
-      listenable: settings,
+      listenable: Listenable.merge([settings, updater]),
       builder: (context, _) {
         final s = settings;
         final tt = Theme.of(context).textTheme;
@@ -103,6 +106,34 @@ class SettingsScreen extends StatelessWidget {
                       ),
                   ],
                 ),
+              const Divider(),
+              _Section('אודות'),
+              ListTile(
+                leading: const Icon(Icons.info_outline_rounded),
+                title: Text('גרסה $kVersionName'),
+                subtitle: Text(updater.checking
+                    ? 'בודק עדכונים…'
+                    : updater.available != null
+                        ? 'גרסה ${updater.available!.name} זמינה'
+                        : (updater.lastError ?? 'הנתונים מתעדכנים כל לילה מקבצי השקיפות של רמי לוי')),
+                trailing: updater.available != null
+                    ? FilledButton(
+                        onPressed: () => showUpdateSheet(context, updater.available!),
+                        child: const Text('עדכן'),
+                      )
+                    : TextButton(
+                        onPressed: updater.checking || !updater.supported
+                            ? null
+                            : () async {
+                                final r = await updater.check(force: true);
+                                if (r == null && updater.lastError == null && context.mounted) {
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(const SnackBar(content: Text('יש לך את הגרסה האחרונה')));
+                                }
+                              },
+                        child: const Text('בדוק עדכונים'),
+                      ),
+              ),
             ],
           ),
         );

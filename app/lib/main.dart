@@ -4,18 +4,20 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'data.dart';
 import 'screens/deals_screen.dart';
 import 'settings.dart';
+import 'updater.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final settings = Settings();
   await settings.load();
-  runApp(RamiSalesApp(settings: settings, api: Api()));
+  runApp(RamiSalesApp(settings: settings, api: Api(), updater: Updater()));
 }
 
 class RamiSalesApp extends StatelessWidget {
   final Settings settings;
   final Api api;
-  const RamiSalesApp({super.key, required this.settings, required this.api});
+  final Updater updater;
+  const RamiSalesApp({super.key, required this.settings, required this.api, required this.updater});
 
   @override
   Widget build(BuildContext context) {
@@ -50,7 +52,7 @@ class RamiSalesApp extends StatelessWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      home: DealsScreen(settings: settings, api: api),
+      home: DealsScreen(settings: settings, api: api, updater: updater),
     );
   }
 }

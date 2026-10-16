@@ -8,6 +8,7 @@ perms = [
     "android.permission.INTERNET",
     "android.permission.ACCESS_COARSE_LOCATION",
     "android.permission.ACCESS_FINE_LOCATION",
+    "android.permission.REQUEST_INSTALL_PACKAGES",
 ]
 for p in perms:
     if p not in s:
@@ -19,5 +20,30 @@ if https_query not in s:
         s = s.replace("<queries>", "<queries>\n        " + https_query, 1)
     else:
         s = s.replace("</manifest>", f"    <queries>{https_query}</queries>\n</manifest>")
+# ota_update: FileProvider + install result receiver
+ota = """
+        <provider
+            android:name="sk.fourq.otaupdate.OtaUpdateFileProvider"
+            android:authorities="${applicationId}.ota_update_provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/filepaths" />
+        </provider>
+        <receiver android:name="sk.fourq.otaupdate.InstallResultReceiver" android:exported="false">
+            <intent-filter><action android:name="${applicationId}.ACTION_INSTALL_COMPLETE" /></intent-filter>
+        </receiver>
+"""
+if "OtaUpdateFileProvider" not in s:
+    s = s.replace("</application>", ota + "    </application>", 1)
 m.write_text(s, encoding="utf-8")
+xml = Path("android/app/src/main/res/xml")
+xml.mkdir(parents=True, exist_ok=True)
+(xml / "filepaths.xml").write_text(
+    '<?xml version="1.0" encoding="utf-8"?>\n'
+    '<paths xmlns:android="http://schemas.android.com/apk/res/android">\n'
+    '    <files-path name="internal_apk_storage" path="ota_update/" />\n'
+    '    <external-path name="external_download" path="Download" />\n'
+    '</paths>\n',
+    encoding="utf-8",
+)
 print(s)
