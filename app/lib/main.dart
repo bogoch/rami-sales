@@ -6,6 +6,7 @@ import 'background.dart';
 import 'data.dart';
 import 'screens/deals_screen.dart';
 import 'settings.dart';
+import 'shopping.dart';
 import 'updater.dart';
 import 'watch.dart';
 
@@ -14,6 +15,7 @@ Future<void> main() async {
   final settings = Settings();
   await settings.load();
   await Watchlist.instance.load();
+  await ShoppingList.instance.load();
   if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
     try {
       await initNotifications();

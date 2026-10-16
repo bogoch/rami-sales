@@ -47,7 +47,7 @@ class Deal {
 
   Deal.fromJson(Map<String, dynamic> j)
       : id = j['id'] as String,
-        desc = j['desc'] as String,
+        desc = prettyDesc(j['desc'] as String),
         start = DateTime.tryParse((j['start'] ?? '') as String),
         end = DateTime.tryParse((j['end'] ?? '') as String),
         firstSeen = DateTime.tryParse((j['firstSeen'] ?? '') as String),
@@ -113,4 +113,25 @@ class ProductCategory {
       : id = j['id'] as String,
         name = j['name'] as String,
         group = j['group'] as String;
+}
+
+/// Cleans Rami Levy's terse promo descriptions and fixes bidi-hostile patterns:
+/// "2ב10" renders as "10ב2" in RTL, so it becomes "2 ב-10"; "מו3" → "(מוגבל ל-3)".
+String prettyDesc(String s) {
+  var t = ' $s ';
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)(\d+)\s*ב\s*-?\s*(\d+(?:\.\d+)?)'), (m) => '${m[1]} ב-${m[2]}');
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)ב(\d+(?:\.\d+)?)'), (m) => 'ב-${m[1]}');
+  t = t.replaceAllMapped(RegExp(r'(?<=\s)מו(\d+)(?=\s)'), (m) => '(מוגבל ל-${m[1]})');
+  const words = {
+    ' ש ח ': ' ₪ ',
+    ' מ ל ': ' מ"ל ',
+    ' ק ג ': ' ק"ג ',
+    ' לל ג ': ' ללא גלוטן ',
+    ' לל ס ': ' ללא סוכר ',
+    ' לי ': ' ל\' ',
+  };
+  for (final e in words.entries) {
+    t = t.replaceAll(e.key, e.value);
+  }
+  return t.replaceAll(RegExp(r'\s+'), ' ').trim();
 }

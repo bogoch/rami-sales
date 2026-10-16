@@ -178,3 +178,127 @@ class _AppearState extends State<Appear> with SingleTickerProviderStateMixin {
     );
   }
 }
+
+/// Horizontal swipe with two actions, following the fluid-interface rules:
+/// 1:1 tracking, rubber-band past the commit point, a haptic tick when the action
+/// arms, and a critically damped spring back from the live position on release.
+/// Swiping towards the reading start (right in RTL) triggers [onStart],
+/// towards the end (left in RTL) triggers [onEnd].
+class SwipeActions extends StatefulWidget {
+  final Widget child;
+  final IconData startIcon, endIcon;
+  final String startLabel, endLabel;
+  final Color startColor, endColor;
+  final VoidCallback onStart, onEnd;
+  const SwipeActions({
+    super.key,
+    required this.child,
+    required this.startIcon,
+    required this.endIcon,
+    required this.startLabel,
+    required this.endLabel,
+    required this.startColor,
+    required this.endColor,
+    required this.onStart,
+    required this.onEnd,
+  });
+
+  @override
+  State<SwipeActions> createState() => _SwipeActionsState();
+}
+
+class _SwipeActionsState extends State<SwipeActions> with SingleTickerProviderStateMixin {
+  late final AnimationController _x = AnimationController.unbounded(vsync: this);
+  static const _commit = 96.0;
+  double _raw = 0;
+  bool _armed = false;
+
+  double _rubber(double d) {
+    final a = d.abs();
+    if (a <= _commit) return d;
+    final over = a - _commit;
+    return d.sign * (_commit + over * 140 / (140 + over)); // progressive resistance
+  }
+
+  void _update(DragUpdateDetails e) {
+    _raw += e.delta.dx;
+    _x.value = _rubber(_raw);
+    final armed = _raw.abs() >= _commit;
+    if (armed != _armed) {
+      _armed = armed;
+      if (armed) Haptics.select();
+    }
+    setState(() {});
+  }
+
+  void _end(DragEndDetails e) {
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    if (_armed) {
+      // dx > 0 moves right: that is towards the start edge in RTL
+      final towardsStart = rtl ? _raw > 0 : _raw < 0;
+      Haptics.commit();
+      towardsStart ? widget.onStart() : widget.onEnd();
+    }
+    _raw = 0;
+    _armed = false;
+    final v = e.velocity.pixelsPerSecond.dx;
+    if (reduceMotion(context)) {
+      _x.value = 0;
+    } else {
+      _x.animateWith(SpringSimulation(kSpring, _x.value, 0, _armed ? 0 : v));
+    }
+  }
+
+  @override
+  void dispose() {
+    _x.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final rtl = Directionality.of(context) == TextDirection.rtl;
+    return GestureDetector(
+      onHorizontalDragUpdate: _update,
+      onHorizontalDragEnd: _end,
+      onHorizontalDragCancel: () => _end(DragEndDetails()),
+      child: AnimatedBuilder(
+        animation: _x,
+        builder: (context, child) {
+          final dx = _x.value;
+          final towardsStart = rtl ? dx > 0 : dx < 0;
+          final progress = (dx.abs() / _commit).clamp(0.0, 1.0);
+          final color = towardsStart ? widget.startColor : widget.endColor;
+          final icon = towardsStart ? widget.startIcon : widget.endIcon;
+          final label = towardsStart ? widget.startLabel : widget.endLabel;
+          return Stack(children: [
+            if (dx.abs() > 1)
+              Positioned.fill(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 5),
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: color.withValues(alpha: 0.15 + 0.85 * progress),
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    alignment: dx > 0 ? Alignment.centerLeft : Alignment.centerRight,
+                    child: Transform.scale(
+                      scale: 0.7 + 0.3 * progress,
+                      child: Column(mainAxisSize: MainAxisSize.min, children: [
+                        Icon(icon, color: Colors.white, size: 26),
+                        const SizedBox(height: 2),
+                        Text(label, style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.w600)),
+                      ]),
+                    ),
+                  ),
+                ),
+              ),
+            Transform.translate(offset: Offset(dx, 0), child: child),
+          ]);
+        },
+        child: widget.child,
+      ),
+    );
+  }
+}

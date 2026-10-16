@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:path_provider/path_provider.dart';
 
+import 'catalog.dart';
 import 'models.dart';
 
 const baseUrl = 'https://bogoch.github.io/rami-sales';
@@ -75,3 +76,12 @@ class Api {
 }
 
 DealsFile _parseDeals(Map<String, dynamic> j) => DealsFile.fromJson(j);
+
+Catalog _parseCatalog(Map<String, dynamic> j) => Catalog.fromJson(j);
+
+extension CatalogApi on Api {
+  Future<Catalog> catalog(String storeId) async {
+    final r = await _getJson('catalog/$storeId.json');
+    return compute(_parseCatalog, r.data);
+  }
+}

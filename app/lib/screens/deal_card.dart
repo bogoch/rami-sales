@@ -7,6 +7,7 @@ import '../logic.dart';
 import '../models.dart';
 import '../product_image.dart';
 import '../ui.dart';
+import '../shopping.dart';
 import '../watch.dart';
 
 class DealCard extends StatelessWidget {
@@ -259,15 +260,28 @@ class _ItemRow extends StatelessWidget {
           title: Text(item.name),
           subtitle: Text('${lines.join('\n')}\n${item.code}', style: tt.bodySmall),
           isThreeLine: true,
-          trailing: IconButton(
-            tooltip: on ? 'הפסק לעקוב' : 'עקוב אחרי המוצר',
-            icon: Icon(on ? Icons.star_rounded : Icons.star_outline_rounded,
-                color: on ? const Color(0xFFF2A900) : null),
-            onPressed: () {
-              Haptics.select();
-              wl.toggle(WatchItem('product', item.code, item.name));
-            },
-          ),
+          trailing: Row(mainAxisSize: MainAxisSize.min, children: [
+            IconButton(
+              tooltip: 'הוסף לרשימת הקניות',
+              icon: const Icon(Icons.add_shopping_cart_rounded),
+              onPressed: () {
+                Haptics.commit();
+                ShoppingList.instance.addItem(item.name, code: item.code, qty: deal.buyQty > 1 ? deal.buyQty.round() : 1);
+                ScaffoldMessenger.of(context)
+                  ..hideCurrentSnackBar()
+                  ..showSnackBar(SnackBar(content: Text('נוסף לרשימה: ${item.name}')));
+              },
+            ),
+            IconButton(
+              tooltip: on ? 'הפסק לעקוב' : 'עקוב אחרי המוצר',
+              icon: Icon(on ? Icons.star_rounded : Icons.star_outline_rounded,
+                  color: on ? const Color(0xFFF2A900) : null),
+              onPressed: () {
+                Haptics.select();
+                wl.toggle(WatchItem('product', item.code, item.name));
+              },
+            ),
+          ]),
         );
       },
     );

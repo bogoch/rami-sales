@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../category_style.dart';
 import '../data.dart';
@@ -8,7 +9,9 @@ import '../product_image.dart';
 import '../settings.dart';
 import '../ui.dart';
 import '../updater.dart';
+import '../shopping.dart';
 import '../watch.dart';
+import 'list_screen.dart';
 import 'watch_screen.dart';
 import 'deal_card.dart';
 import 'settings_screen.dart';
@@ -43,6 +46,7 @@ class _DealsScreenState extends State<DealsScreen> {
     s.addListener(_onSettings);
     widget.updater.addListener(_onSettings);
     Watchlist.instance.addListener(_onSettings);
+    ShoppingList.instance.addListener(_onSettings);
     _load();
     widget.updater.check();
   }
@@ -52,6 +56,7 @@ class _DealsScreenState extends State<DealsScreen> {
     s.removeListener(_onSettings);
     widget.updater.removeListener(_onSettings);
     Watchlist.instance.removeListener(_onSettings);
+    ShoppingList.instance.removeListener(_onSettings);
     super.dispose();
   }
 
@@ -80,6 +85,7 @@ class _DealsScreenState extends State<DealsScreen> {
       }
       if (!mounted) return;
       CategoryStyles.load(cats);
+      _maybeTip();
       setState(() {
         _file = r.data;
         _fromCache = r.fromCache;
@@ -153,6 +159,17 @@ class _DealsScreenState extends State<DealsScreen> {
                 ),
                 IconButton(
                   icon: Badge(
+                    isLabelVisible: ShoppingList.instance.openCount > 0,
+                    label: Text('${ShoppingList.instance.openCount}'),
+                    child: const Icon(Icons.shopping_cart_outlined),
+                  ),
+                  tooltip: 'רשימת קניות',
+                  onPressed: () => Navigator.of(context).push(FluidRoute(
+                    builder: (_) => ListScreen(settings: s, api: widget.api, file: _file),
+                  )),
+                ),
+                IconButton(
+                  icon: Badge(
                     isLabelVisible: file != null && Watchlist.instance.matches(file.deals, hiddenTags: s.hiddenTags).isNotEmpty,
                     label: Text('${file == null ? 0 : Watchlist.instance.matches(file.deals, hiddenTags: s.hiddenTags).length}'),
                     child: const Icon(Icons.notifications_none_rounded),
@@ -172,8 +189,7 @@ class _DealsScreenState extends State<DealsScreen> {
                 child: Text(
                   [
                     'סניף ${s.storeName}',
-                    if (file != null) 'עודכן ${_fmtTime(file.generated)}',
-                    'מעל ${s.minPct.round()}%${s.minSave > 0 ? ' וחיסכון ₪${s.minSave.round()}+' : ''}',
+                    if (file != null) 'עודכן ${_relTime(file.generated)}',
                   ].join(' · '),
                   style: tt.bodySmall?.copyWith(color: cs.onSurfaceVariant),
                 ),
@@ -262,10 +278,20 @@ class _DealsScreenState extends State<DealsScreen> {
                   itemBuilder: (_, i) => Appear(
                     key: ValueKey('${_segment}_${_group}_${shown[i].id}'),
                     index: i,
-                    child: DealCard(
-                      deal: shown[i],
-                      dataDate: file!.generated,
-                      storeName: s.storeName,
+                    child: SwipeActions(
+                      startIcon: Icons.visibility_off_rounded,
+                      startLabel: 'הסתר',
+                      startColor: const Color(0xFF6B7280),
+                      endIcon: Icons.add_shopping_cart_rounded,
+                      endLabel: 'לרשימה',
+                      endColor: const Color(0xFF16A34A),
+                      onStart: () => _hideDeal(shown[i]),
+                      onEnd: () => _addToList(shown[i]),
+                      child: DealCard(
+                        deal: shown[i],
+                        dataDate: file!.generated,
+                        storeName: s.storeName,
+                      ),
                     ),
                   ),
                 ),
@@ -274,6 +300,44 @@ class _DealsScreenState extends State<DealsScreen> {
         ),
       ),
     );
+  }
+
+  Future<void> _maybeTip() async {
+    final p = await SharedPreferences.getInstance();
+    if (p.getBool('swipeTipShown') == true || !mounted) return;
+    await p.setBool('swipeTipShown', true);
+    if (!mounted) return;
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+      duration: Duration(seconds: 6),
+      content: Text('טיפ: החלק מבצע שמאלה כדי להוסיף לרשימת הקניות, או ימינה כדי להסתיר אותו'),
+    ));
+  }
+
+  void _hideDeal(Deal d) {
+    s.hideDeal(d.id, true);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(
+        content: const Text('המבצע הוסתר'),
+        action: SnackBarAction(label: 'בטל', onPressed: () => s.hideDeal(d.id, false)),
+      ));
+  }
+
+  void _addToList(Deal d) {
+    final it = d.best;
+    final qty = d.buyQty > 1 ? d.buyQty.round() : 1;
+    ShoppingList.instance.addItem(it.name, code: it.code, qty: qty);
+    ScaffoldMessenger.of(context)
+      ..hideCurrentSnackBar()
+      ..showSnackBar(SnackBar(
+        content: Text('נוסף לרשימה: ${it.name}${qty > 1 ? ' ×$qty' : ''}'),
+        action: SnackBarAction(
+          label: 'לרשימה',
+          onPressed: () => Navigator.of(context).push(FluidRoute(
+            builder: (_) => ListScreen(settings: s, api: widget.api, file: _file),
+          )),
+        ),
+      ));
   }
 
   Widget _searchField(ColorScheme cs) => Padding(
@@ -342,7 +406,7 @@ class _DealsScreenState extends State<DealsScreen> {
           child: Text('הכי שווים היום', style: display(context, 19, weight: FontWeight.w700)),
         ),
         SizedBox(
-          height: 156,
+          height: 176,
           child: PageView.builder(
             controller: PageController(viewportFraction: 0.84),
             padEnds: false,
@@ -359,6 +423,17 @@ class _DealsScreenState extends State<DealsScreen> {
   }
 
   Widget _errorView() => _EmptyView(text: _error!, action: 'נסה שוב', onAction: _load, icon: Icons.wifi_off_rounded);
+
+  String _relTime(DateTime t) {
+    final l = t.toLocal();
+    final now = DateTime.now();
+    String two(int n) => n.toString().padLeft(2, '0');
+    final hm = '${two(l.hour)}:${two(l.minute)}';
+    final days = DateTime(now.year, now.month, now.day).difference(DateTime(l.year, l.month, l.day)).inDays;
+    if (days == 0) return 'היום $hm';
+    if (days == 1) return 'אתמול $hm';
+    return '${l.day}.${l.month} $hm';
+  }
 
   String _fmtTime(DateTime t) {
     final l = t.toLocal();
@@ -500,30 +575,32 @@ class _HeroCard extends StatelessWidget {
           gradient: LinearGradient(begin: AlignmentDirectional.topStart, end: AlignmentDirectional.bottomEnd, colors: [c1, c2]),
           boxShadow: [BoxShadow(color: base.withValues(alpha: 0.28), blurRadius: 18, offset: const Offset(0, 8))],
         ),
-        child: Stack(children: [
-          PositionedDirectional(
-            end: 0,
-            top: 0,
-            child: ProductImage(
-              code: it.code,
-              size: 76,
-              fallback: PIcon(CategoryStyles.iconOfCat(cat), size: 76, color: white.withValues(alpha: 0.22)),
+        child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+          Row(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            Expanded(
+              child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Text('${deal.pct.round()}%', textDirection: TextDirection.ltr, style: display(context, 36, color: white)),
+                Text('הנחה · חוסכים ₪${money(it.save * deal.buyQty)}',
+                    style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5, fontWeight: FontWeight.w600)),
+              ]),
             ),
-          ),
-          Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-            Text('${deal.pct.round()}%',
-                textDirection: TextDirection.ltr, style: display(context, 38, color: white)),
-            Text('הנחה · חוסכים ₪${money(it.save * deal.buyQty)}',
-                style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5, fontWeight: FontWeight.w600)),
-            const Spacer(),
-            Text(deal.desc,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(color: white, fontSize: 15, fontWeight: FontWeight.w700, height: 1.25)),
-            const SizedBox(height: 2),
-            Text('${offerText(deal)} · במקום ₪${money(it.regular)}',
-                style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5)),
+            const SizedBox(width: 10),
+            ProductImage(
+              code: it.code,
+              size: 62,
+              fallback: PIcon(CategoryStyles.iconOfCat(cat), size: 62, color: white.withValues(alpha: 0.3)),
+            ),
           ]),
+          const Spacer(),
+          Text(deal.desc,
+              maxLines: 2,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: white, fontSize: 15, fontWeight: FontWeight.w700, height: 1.25)),
+          const SizedBox(height: 2),
+          Text('${offerText(deal)} · במקום ₪${money(it.regular)}',
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+              style: TextStyle(color: white.withValues(alpha: 0.9), fontSize: 12.5)),
         ]),
       ),
     );

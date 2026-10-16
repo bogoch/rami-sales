@@ -94,6 +94,7 @@ List<Deal> goodDeals(List<Deal> all, Settings s, Filter f) {
   final out = all
       .where((d) =>
           !d.isComplex &&
+          !s.hiddenDeals.contains(d.id) &&
           d.pct >= s.minPct &&
           d.save >= s.minSave &&
           !_hiddenByTags(d, s.hiddenTags) &&
@@ -108,6 +109,7 @@ List<Deal> complexDeals(List<Deal> all, Settings s, Filter f) {
   final out = all
       .where((d) =>
           d.isComplex &&
+          !s.hiddenDeals.contains(d.id) &&
           !_hiddenByTags(d, s.hiddenTags) &&
           !_hiddenByCats(d, s.hiddenCats) &&
           _matches(d, f))

@@ -30,6 +30,7 @@ class Settings extends ChangeNotifier {
   double minSave = 3;
   Set<String> hiddenTags = {};
   Set<String> hiddenCats = {};
+  Set<String> hiddenDeals = {};
   SortBy sort = SortBy.pct;
 
   Future<void> load() async {
@@ -40,6 +41,7 @@ class Settings extends ChangeNotifier {
     minSave = _p.getDouble('minSave') ?? minSave;
     hiddenTags = (_p.getStringList('hiddenTags') ?? []).toSet();
     hiddenCats = (_p.getStringList('hiddenCats') ?? []).toSet();
+    hiddenDeals = (_p.getStringList('hiddenDeals') ?? []).toSet();
     sort = SortBy.values[(_p.getInt('sort') ?? 0).clamp(0, SortBy.values.length - 1)];
   }
 
@@ -50,6 +52,7 @@ class Settings extends ChangeNotifier {
     _p.setDouble('minSave', minSave);
     _p.setStringList('hiddenTags', hiddenTags.toList());
     _p.setStringList('hiddenCats', hiddenCats.toList());
+    _p.setStringList('hiddenDeals', hiddenDeals.toList());
     _p.setInt('sort', sort.index);
     notifyListeners();
   }
@@ -78,6 +81,16 @@ class Settings extends ChangeNotifier {
 
   void toggleCat(String cat, bool hidden) {
     hidden ? hiddenCats.add(cat) : hiddenCats.remove(cat);
+    _save();
+  }
+
+  void hideDeal(String id, bool hidden) {
+    hidden ? hiddenDeals.add(id) : hiddenDeals.remove(id);
+    _save();
+  }
+
+  void clearHiddenDeals() {
+    hiddenDeals.clear();
     _save();
   }
 

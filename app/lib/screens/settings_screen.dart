@@ -86,6 +86,15 @@ class SettingsScreen extends StatelessWidget {
                     s.toggleTag(e.key, v);
                   },
                 ),
+              if (s.hiddenDeals.isNotEmpty)
+                ListTile(
+                  leading: const Icon(Icons.visibility_rounded),
+                  title: Text('הצג שוב ${s.hiddenDeals.length} מבצעים שהסתרתי'),
+                  onTap: () {
+                    Haptics.commit();
+                    s.clearHiddenDeals();
+                  },
+                ),
               const Divider(),
               _Section('קטגוריות להסתרה'),
               if (categories.isEmpty)
