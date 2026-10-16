@@ -1,0 +1,31 @@
+hits out of 30: {'rl_small': 19, 'rl_large': 19, 'rl_plain': 0, 'off': 2}
+7290120124479 | קערת עגולה בינונית 2 | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290000000158 | קוקוס | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290017978055 | מג'יק פיסטוק | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290017928487 | בייגלה גדול עם מלח 2 | rl_small:200:image/jpeg:14349 | rl_large:200:image/jpeg:92844 | rl_plain:403:None:0 | off:False
+7290017121895 | עללחם סחוג אדום 140 | rl_small:200:image/jpeg:15481 | rl_large:200:image/jpeg:108950 | rl_plain:403:None:0 | off:False
+7290011765095 | ג'ל גילוח לעור עדין | rl_small:200:image/jpeg:6927 | rl_large:200:image/jpeg:42049 | rl_plain:403:None:0 | off:False
+7290104508202 | גביעי גלידה אסם 24 י | rl_small:200:image/jpeg:22754 | rl_large:200:image/jpeg:143161 | rl_plain:403:None:0 | off:False
+7290110322021 | טופו עם בזיליקום אלט | rl_small:200:image/jpeg:15255 | rl_large:200:image/jpeg:106305 | rl_plain:403:None:0 | off:True
+7290012642685 | לפתן קוביות אפרסקים | rl_small:200:image/jpeg:14208 | rl_large:200:image/jpeg:81522 | rl_plain:403:None:0 | off:False
+7290008961844 | מארז 3יח מיץ תפוחים | rl_small:200:image/jpeg:22244 | rl_large:200:image/jpeg:154468 | rl_plain:403:None:0 | off:False
+7290000139258 | שלווה דבש וסוכר חום | rl_small:200:image/jpeg:17192 | rl_large:200:image/jpeg:95436 | rl_plain:403:None:0 | off:False
+7290113479319 | מגבת גוף איכותית (14 | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290004861056 | גבינה צפתית 5% | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290011133368 | שנדי תפוח 330 בקבוק שישיי | rl_small:200:image/jpeg:21687 | rl_large:200:image/jpeg:186118 | rl_plain:403:None:0 | off:False
+7290118073963 | כבל מאריך 6 מטר 1.5* | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290001973233 | ק.ב סנסטיב מגבונים 120 יח | rl_small:200:image/jpeg:11999 | rl_large:200:image/jpeg:66505 | rl_plain:403:None:0 | off:False
+7290005896439 | מכבי חוזר 500 מ"ל בקבוק 2 | rl_small:200:image/jpeg:8046 | rl_large:200:image/jpeg:53849 | rl_plain:403:None:0 | off:False
+7290117387726 | מאסטר שף מחית עגבניו | rl_small:200:image/jpeg:13721 | rl_large:200:image/jpeg:76037 | rl_plain:403:None:0 | off:False
+7290121043175 | מארז צלחות אסתר 6+6י | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290016682342 | מיץ תפוזים ולנסיה 2ל | rl_small:200:image/jpeg:10286 | rl_large:200:image/jpeg:64378 | rl_plain:403:None:0 | off:False
+7290008202091 | צוואר בקר טרי | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290104966125 | קרם גוף שפור 200 מל | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290118076827 | מחבת יציקה איכותית 2 | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290019274315 | קוקהנומיקה בריח לבנד | rl_small:200:image/jpeg:4960 | rl_large:200:image/jpeg:32414 | rl_plain:403:None:0 | off:False
+7296168017117 | פלסטרים גוון עור 100 | rl_small:403:None:0 | rl_large:403:None:0 | rl_plain:403:None:0 | off:False
+7290104960352 | נקה 7 תחליב רחצה וני | rl_small:200:image/jpeg:6717 | rl_large:200:image/jpeg:36698 | rl_plain:403:None:0 | off:False
+7290012226120 | קבנוס זוגלובק 135 גר | rl_small:200:image/jpeg:8178 | rl_large:200:image/jpeg:52348 | rl_plain:403:None:0 | off:False
+7290106721920 | צנצנת מאסט מנטה עדינ | rl_small:200:image/jpeg:13438 | rl_large:200:image/jpeg:71000 | rl_plain:403:None:0 | off:False
+7290110577261 | משקה יטבתה פרו שוקול | rl_small:200:image/jpeg:10378 | rl_large:200:image/jpeg:52780 | rl_plain:403:None:0 | off:True
+7290016682328 | מיץ תפוזים מרכז 2לי | rl_small:200:image/jpeg:9916 | rl_large:200:image/jpeg:67385 | rl_plain:403:None:0 | off:False
