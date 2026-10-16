@@ -9,6 +9,8 @@ perms = [
     "android.permission.ACCESS_COARSE_LOCATION",
     "android.permission.ACCESS_FINE_LOCATION",
     "android.permission.REQUEST_INSTALL_PACKAGES",
+    "android.permission.POST_NOTIFICATIONS",
+    "android.permission.RECEIVE_BOOT_COMPLETED",
 ]
 for p in perms:
     if p not in s:
@@ -64,3 +66,15 @@ elif groovy.exists():
         g += "\ndependencies {\n    coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.4'\n}\n"
         groovy.write_text(g, encoding="utf-8")
 print("desugaring patched:", kts.exists() or groovy.exists())
+
+# minSdk 24 (flutter_local_notifications) and the monochrome notification icon
+for gp in (kts, groovy):
+    if gp.exists():
+        g = gp.read_text(encoding="utf-8")
+        g = re.sub(r"minSdk\s*=\s*flutter\.minSdkVersion", "minSdk = 24", g)
+        g = re.sub(r"minSdkVersion\s+flutter\.minSdkVersion", "minSdkVersion 24", g)
+        gp.write_text(g, encoding="utf-8")
+import shutil
+drawable = Path("android/app/src/main/res/drawable")
+drawable.mkdir(parents=True, exist_ok=True)
+shutil.copy("assets/brand/notify.png", drawable / "ic_stat_notify.png")

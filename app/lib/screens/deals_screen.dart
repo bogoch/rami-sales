@@ -8,6 +8,8 @@ import '../product_image.dart';
 import '../settings.dart';
 import '../ui.dart';
 import '../updater.dart';
+import '../watch.dart';
+import 'watch_screen.dart';
 import 'deal_card.dart';
 import 'settings_screen.dart';
 
@@ -40,6 +42,7 @@ class _DealsScreenState extends State<DealsScreen> {
     _loadedStore = s.storeId;
     s.addListener(_onSettings);
     widget.updater.addListener(_onSettings);
+    Watchlist.instance.addListener(_onSettings);
     _load();
     widget.updater.check();
   }
@@ -48,6 +51,7 @@ class _DealsScreenState extends State<DealsScreen> {
   void dispose() {
     s.removeListener(_onSettings);
     widget.updater.removeListener(_onSettings);
+    Watchlist.instance.removeListener(_onSettings);
     super.dispose();
   }
 
@@ -147,6 +151,17 @@ class _DealsScreenState extends State<DealsScreen> {
                     for (final e in sortLabels.entries) PopupMenuItem(value: e.key, child: Text(e.value)),
                   ],
                 ),
+                IconButton(
+                  icon: Badge(
+                    isLabelVisible: file != null && Watchlist.instance.matches(file.deals, hiddenTags: s.hiddenTags).isNotEmpty,
+                    label: Text('${file == null ? 0 : Watchlist.instance.matches(file.deals, hiddenTags: s.hiddenTags).length}'),
+                    child: const Icon(Icons.notifications_none_rounded),
+                  ),
+                  tooltip: 'מעקב',
+                  onPressed: () => Navigator.of(context).push(FluidRoute(
+                    builder: (_) => WatchScreen(settings: s, file: _file, categories: _cats),
+                  )),
+                ),
                 IconButton(icon: const Icon(Icons.tune_rounded), tooltip: 'הגדרות', onPressed: _openSettings),
                 const SizedBox(width: 4),
               ],
@@ -204,6 +219,14 @@ class _DealsScreenState extends State<DealsScreen> {
                   text: 'גרסה חדשה ${widget.updater.available!.name} זמינה',
                   action: 'עדכן',
                   onAction: () => showUpdateSheet(context, widget.updater.available!),
+                ),
+              ),
+            if (file != null && DateTime.now().difference(file.generated).inHours >= 30)
+              SliverToBoxAdapter(
+                child: _Notice(
+                  text: 'הנתונים מעודכנים ל-${_fmtTime(file.generated)}. ייתכן שחלק מהמבצעים כבר הסתיימו.',
+                  action: 'רענן',
+                  onAction: _load,
                 ),
               ),
             if (_fromCache)

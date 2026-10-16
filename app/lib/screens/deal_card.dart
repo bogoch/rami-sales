@@ -7,6 +7,7 @@ import '../logic.dart';
 import '../models.dart';
 import '../product_image.dart';
 import '../ui.dart';
+import '../watch.dart';
 
 class DealCard extends StatelessWidget {
   final Deal deal;
@@ -46,7 +47,18 @@ class DealCard extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(deal.desc,
+                    Text.rich(
+                        TextSpan(children: [
+                          if (Watchlist.instance.watched(deal))
+                            WidgetSpan(
+                              alignment: PlaceholderAlignment.middle,
+                              child: Padding(
+                                padding: const EdgeInsetsDirectional.only(end: 4),
+                                child: Icon(Icons.notifications_active_rounded, size: 15, color: cs.primary),
+                              ),
+                            ),
+                          TextSpan(text: deal.desc),
+                        ]),
                         style: tt.titleSmall?.copyWith(fontWeight: FontWeight.w600, height: 1.25),
                         maxLines: 2,
                         overflow: TextOverflow.ellipsis),
@@ -236,13 +248,28 @@ class _ItemRow extends StatelessWidget {
             : '₪${money(item.regPU!)} $pu',
       if (item.min30 != null) 'המחיר הרגיל היה ₪${money(item.min30!)} בחודש האחרון',
     ];
-    return ListTile(
-      contentPadding: EdgeInsets.zero,
-      leading: ProductImage(code: item.code, size: 48, fallback: CategoryTile.forDeal(deal, size: 48)),
-      title: Text(item.name),
-      subtitle: Text(lines.join('\n')),
-      isThreeLine: lines.length > 1,
-      trailing: Text(item.code, style: tt.labelSmall, textDirection: TextDirection.ltr),
+    final wl = Watchlist.instance;
+    return ListenableBuilder(
+      listenable: wl,
+      builder: (context, _) {
+        final on = wl.has('product', item.code);
+        return ListTile(
+          contentPadding: EdgeInsets.zero,
+          leading: ProductImage(code: item.code, size: 48, fallback: CategoryTile.forDeal(deal, size: 48)),
+          title: Text(item.name),
+          subtitle: Text('${lines.join('\n')}\n${item.code}', style: tt.bodySmall),
+          isThreeLine: true,
+          trailing: IconButton(
+            tooltip: on ? 'הפסק לעקוב' : 'עקוב אחרי המוצר',
+            icon: Icon(on ? Icons.star_rounded : Icons.star_outline_rounded,
+                color: on ? const Color(0xFFF2A900) : null),
+            onPressed: () {
+              Haptics.select();
+              wl.toggle(WatchItem('product', item.code, item.name));
+            },
+          ),
+        );
+      },
     );
   }
 }

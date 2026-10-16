@@ -19,11 +19,37 @@ dependencies:
   flutter_svg: ^2.0.10
   cached_network_image: ^3.4.1
   ota_update: ^7.1.0
+  workmanager: ^0.10.0
+  flutter_local_notifications: ^22.0.0
 
 dev_dependencies:
   flutter_lints: ^4.0.0
+  flutter_launcher_icons: ^0.14.1
+  flutter_native_splash: ^2.4.1
 
 flutter:
   uses-material-design: true
   assets:
     - assets/icons/
+
+flutter_launcher_icons:
+  android: true
+  ios: false
+  image_path: assets/brand/icon.png
+  adaptive_icon_background: assets/brand/icon-background.png
+  adaptive_icon_foreground: assets/brand/icon-foreground.png
+  adaptive_icon_monochrome: assets/brand/icon-monochrome.png
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: assets/brand/icon-rounded.png
+    background_color: "#D21F2C"
+    theme_color: "#D21F2C"
+
+flutter_native_splash:
+  color: "#D21F2C"
+  image: assets/brand/splash.png
+  android_12:
+    image: assets/brand/splash12.png
+    color: "#D21F2C"
+  web: false

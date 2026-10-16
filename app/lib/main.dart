@@ -1,15 +1,27 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'background.dart';
 import 'data.dart';
 import 'screens/deals_screen.dart';
 import 'settings.dart';
 import 'updater.dart';
+import 'watch.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final settings = Settings();
   await settings.load();
+  await Watchlist.instance.load();
+  if (!kIsWeb && defaultTargetPlatform == TargetPlatform.android) {
+    try {
+      await initNotifications();
+      await initBackground();
+    } catch (_) {
+      // notifications/background are best-effort; the app works without them
+    }
+  }
   runApp(RamiSalesApp(settings: settings, api: Api(), updater: Updater()));
 }
 

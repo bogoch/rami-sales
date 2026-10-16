@@ -29,6 +29,10 @@ jobs:
           rm -rf test
           python3 tool/patch_android.py
       - run: flutter pub get
+      - name: App icon and splash
+        run: |
+          dart run flutter_launcher_icons
+          dart run flutter_native_splash:create
       - name: Analyze
         run: |
           set -o pipefail
